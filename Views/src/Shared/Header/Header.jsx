@@ -62,7 +62,7 @@ const Header = () => {
               <button className="px-10 py-3 rounded-full border-[1px] border-[#3D00B7] text-[#3D00B7] outline-none bg-white">Connect wallet</button>
               </ul>
             </div>
-            <a className=" text-[#3D00B7] text-2xl"><img src={logo} alt="" /></a>
+            <Link to="/"> <img src={logo} alt="" /></Link>
           </div>
           <div className=" hidden lg:flex">
             <ul className="menu menu-horizontal px-1 items-center gap-3">
@@ -86,7 +86,7 @@ const Header = () => {
                 <FaSearch className="text-[#757575]"></FaSearch>
                 </span>
               </li>
-              <span className="flex gap-2">{user && <><Link to="/AddPost"><button className="px-5 py-3 rounded-md text-white outline-none bg-[#3D00B7]">Add Post</button></Link> <button className="px-5 py-3 rounded-md text-white outline-none bg-[#3D00B7]">My Post</button> <button onClick={handleSignOut} className="px-5 py-3 rounded-md text-white outline-none bg-[#3D00B7]">Signout</button></> }</span>
+              <span className="flex gap-2">{user && <><Link to="/AddPost"><button className="px-5 py-3 rounded-md text-white outline-none bg-[#3D00B7]">Add Post</button></Link> <Link to="/myPost"><button className="px-5 py-3 rounded-md text-white outline-none bg-[#3D00B7]">My Post</button></Link> <button onClick={handleSignOut} className="px-5 py-3 rounded-md text-white outline-none bg-[#3D00B7]">Signout</button></> }</span>
               <>{user?.photoURL ? <><img src={user?.photoURL} alt="" /></>:<><img src={person} alt="" /></>}</>
             </ul>
           </div>

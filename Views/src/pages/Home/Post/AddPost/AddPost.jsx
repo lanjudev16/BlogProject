@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../provider/AuthProvider";
 
 const AddPost = () => {
+
   useEffect(() => {
     document.title = "Add a Post | Nsft";
   }, []);
@@ -11,12 +12,12 @@ const AddPost = () => {
   const { user } = useContext(AuthContext);
   const currentDate = new Date();
   const formattedDate = currentDate.toLocaleDateString();
-  const [category, setCategory] = useState("Animation characters");
+  const [category, setCategory] = useState("Art & Culture");
   const navigate = useNavigate();
   const [selectedImage, setSelectedImage] = useState(null);
   const [uploadedImageUrl, setUploadedImageUrl] = useState("");
 
-  
+  console.log(user)
   const handleImageChange = (e) => {
     setSelectedImage(e.target.files[0]);
   };
@@ -37,6 +38,7 @@ const AddPost = () => {
     const rating = form.rating.value;
     const tags = form.tags.value;
     const postBody = form.postBody.value;
+    const person=(user?.photoURL)?user?.photoURL:'https://i.ibb.co/V2xbfKH/images2.png'
 
     if (selectedImage) {
       try {
@@ -60,6 +62,7 @@ const AddPost = () => {
         console.error(error);
       }
     }
+
     if (uploadedImageUrl) {
      const  postInfo = {
         userName,
@@ -71,6 +74,7 @@ const AddPost = () => {
         tags,
         postBody,
         PictureURL,
+        person
       };
       console.log(postInfo);
       fetch('http://localhost:5000/addPost',{
@@ -80,10 +84,13 @@ const AddPost = () => {
         },
         body:JSON.stringify(postInfo)
       }).then(res=>res.json()).then(data=>{
-        console.log(data)
+        if(data.insertedId){
+          console.log(data)
+          alert('Inserted successfully')
+        }
       })
     }
-
+    console.log(selectedImage)
   };
 
   return (
@@ -97,15 +104,15 @@ const AddPost = () => {
             <div className="form-control">
               <label className="label">
                 <span className="label-text font-medium text-base text-[#232323]">
-                  User Name
+                  Author Name
                 </span>
               </label>
               <label className="input-group">
                 <input
                   type="text"
-                  defaultValue={
-                    user ? user?.displayName : "Your email name don't exist"
+                  defaultValue={user?.displayName 
                   }
+                  placeholder="Enter your name"
                   className="input input-bordered w-full"
                   name="userName"
                 />
@@ -184,9 +191,9 @@ const AddPost = () => {
                   </span>
                 </label>
                 <select onClick={handleSelect}>
-                  <option value="Frozen dolls">Sports</option>
-                  <option value="Disney princes">Entertainment</option>
-                  <option value="Animation characters" selected>
+                  <option value="Sports">Sports</option>
+                  <option value="Entertainment">Entertainment</option>
+                  <option value="Art & Culture" selected>
                     Art & Culture
                   </option>
                 </select>
@@ -243,7 +250,7 @@ const AddPost = () => {
           <div className="text-center">
             <input
               type="submit"
-              value="Add toy"
+              value="Add Post"
               className="lg:px-10 lg:py-3 px-5 py-2 rounded-md text-white outline-none bg-[#3D00B7] cursor-pointer w-[25%]  my-4"
             />
           </div>

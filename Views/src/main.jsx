@@ -10,6 +10,8 @@ import Signup from "./pages/Signup/Signup";
 import AuthProvider from "./pages/provider/AuthProvider";
 import SignIn from "./pages/SignIn/SignIn";
 import AddPost from "./pages/Home/Post/AddPost/AddPost";
+import MyPost from "./pages/Home/Post/MyPost/MyPost";
+import UpdatePost from "./pages/Home/Post/UpdatePost/UpdatePost";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +25,14 @@ const router = createBrowserRouter([
       {
         path:"/AddPost",
         element:<AddPost></AddPost>
+      },
+      {
+        path:"/myPost",
+        element:<MyPost></MyPost>
+      },
+      {
+        path:"/updatePost/:id",
+        element:<UpdatePost></UpdatePost>
       }
     ],
   },
