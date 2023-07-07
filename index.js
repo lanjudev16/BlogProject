@@ -30,6 +30,12 @@ async function run() {
     app.get("/",(req,res)=>{
       res.send("Server running")
     })
+    //get all post 
+    app.get('/allPost',async(req,res)=>{
+      const result=await blogCollection.find().toArray()
+      res.send(result)
+      console.log(result)
+    })
     //post read here
     app.get('/myPost',async(req,res)=>{
       const result=await blogCollection.find().toArray()
