@@ -13,7 +13,7 @@ import Rating from "react-rating";
 const Blog = () => {
   const [blogPost,setBlogPost]=useState([])
   useEffect(()=>{
-    fetch(`http://localhost:5000/allPost`).then(res=>res.json()).then(data=>{
+    fetch(`https://blog-project-delta-sepia.vercel.app/allPost`).then(res=>res.json()).then(data=>{
       setBlogPost(data)
       console.log(data)
     })
@@ -47,7 +47,7 @@ const Blog = () => {
               </h3>
               <img src={singleBlogPost?.PictureURL} className="my-7" alt="" />
               <p className="font-semibold text-base text-[#706F6F] py-3">
-                {(singleBlogPost?.postBody)} ... <span className="text-[#FF8C47]">Read More</span>
+                {(singleBlogPost?.postBody)?.slice(0,200)} ... <span className="text-[#FF8C47]">Read More</span>
               </p>
               <hr className="my-2" />
               <div className="flex justify-between py-3">
@@ -65,8 +65,8 @@ const Blog = () => {
                   <p className="text-base font-medium text-[#706F6F]">{singleBlogPost?.rating}</p>
                 </div>
                 <div className="flex gap-2 items-center">
-                    <FaEye></FaEye>
-                    <p>499</p>
+                    <h3>Tages</h3>
+                    <p>{singleBlogPost?.tags}</p>
                 </div>
               </div>
             </div>

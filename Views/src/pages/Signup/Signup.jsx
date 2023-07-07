@@ -1,8 +1,11 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../provider/AuthProvider";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 const Signup = () => {
+  useEffect(() => {
+    document.title = "Signup | NFTERS";
+  }, []);
   const {createUser}=useContext(AuthContext)
   const navigate=useNavigate()
   const {
@@ -168,6 +171,7 @@ const Signup = () => {
         >
           Submit
         </button>
+        <p className="text-red-400 my-2 text-xl">Already Have an Account <span><Link to="/signin">Signin</Link></span></p>
       </form>
     </div>
   );

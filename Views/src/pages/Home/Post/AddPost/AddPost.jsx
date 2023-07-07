@@ -5,7 +5,7 @@ import { AuthContext } from "../../../provider/AuthProvider";
 const AddPost = () => {
 
   useEffect(() => {
-    document.title = "Add a Post | Nsft";
+    document.title = "Add Post | NFTERS";
   }, []);
   const img_hosting_token = "df6b63e6f0242336c5dec606dd1ba6b4";
   const img_hosting_url = "https://api.imgbb.com/1/upload";
@@ -77,7 +77,7 @@ const AddPost = () => {
         person
       };
       console.log(postInfo);
-      fetch('http://localhost:5000/addPost',{
+      fetch('https://blog-project-delta-sepia.vercel.app/addPost',{
         method:"POST",
         headers:{
             'content-type':'application/json'

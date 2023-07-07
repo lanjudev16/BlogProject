@@ -2,10 +2,15 @@ import React, { useEffect, useState } from "react";
 import { FaBookmark, FaEdit, FaTrash, FaTrashAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 const MyPost = () => {
+
+  useEffect(() => {
+    document.title = "My Post | NFTERS";
+  }, []);
+
   const [post, setPost] = useState([]);
   // delete method
   const handleDelete = (id) => {
-    fetch(`http://localhost:5000/postDelete/${id}`, {
+    fetch(`https://blog-project-delta-sepia.vercel.app/postDelete/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
@@ -18,7 +23,7 @@ const MyPost = () => {
   };
 
   useEffect(() => {
-    fetch("http://localhost:5000/myPost")
+    fetch("https://blog-project-delta-sepia.vercel.app/myPost")
       .then((res) => res.json())
       .then((data) => {
         setPost(data);

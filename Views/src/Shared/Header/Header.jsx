@@ -5,7 +5,7 @@ import { AuthContext } from "../../pages/provider/AuthProvider";
 import person from '../../../public/Blog/person.png'
 import { Link, useNavigate } from "react-router-dom";
 const Header = () => {
-  const {user,logOut}=useContext(AuthContext)
+  const {user,loading,logOut}=useContext(AuthContext)
   const navigate=useNavigate()
   const handleSignOut=()=>{
     logOut().then(result=>{
@@ -15,7 +15,7 @@ const Header = () => {
     })
   }
   console.log(user)
-  if(user){
+  if(!loading){
     return (
       <div className="bg-base shadow py-3">
         <div className="navbar lg:w-[1140px] mx-auto flex justify-between">
@@ -75,7 +75,6 @@ const Header = () => {
               <li>
                 <a>About</a>
               </li>
-              
               <li className="relative">
                 <input
                   type="text"
@@ -86,7 +85,7 @@ const Header = () => {
                 <FaSearch className="text-[#757575]"></FaSearch>
                 </span>
               </li>
-              <span className="flex gap-2">{user && <><Link to="/AddPost"><button className="px-5 py-3 rounded-md text-white outline-none bg-[#3D00B7]">Add Post</button></Link> <Link to="/myPost"><button className="px-5 py-3 rounded-md text-white outline-none bg-[#3D00B7]">My Post</button></Link> <button onClick={handleSignOut} className="px-5 py-3 rounded-md text-white outline-none bg-[#3D00B7]">Signout</button></> }</span>
+              <span className="flex gap-2">{user ? <><Link to="/AddPost"><button className="px-5 py-3 rounded-md text-white outline-none bg-[#3D00B7]">Add Post</button></Link> <Link to="/myPost"><button className="px-5 py-3 rounded-md text-white outline-none bg-[#3D00B7]">My Post</button></Link> <button onClick={handleSignOut} className="px-5 py-3 rounded-md text-white outline-none bg-[#3D00B7]">Signout</button></>:<><Link to="/signin">Sign in</Link></> }</span>
               <>{user?.photoURL ? <><img src={user?.photoURL} alt="" /></>:<><img src={person} alt="" /></>}</>
             </ul>
           </div>

@@ -2,12 +2,17 @@ import React, { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { AuthContext } from "../../../provider/AuthProvider";
 const UpdatePost = () => {
+
+    useEffect(() => {
+        document.title = "Update Post | NFTERS";
+      }, []);
+
   const params = useParams();
   const id = params.id;
   const [getSinglePost, setSinglePost] = useState({});
   //id wise data load from server
   useEffect(() => {
-    fetch(`http://localhost:5000/getSinglePost/${id}`)
+    fetch(`https://blog-project-delta-sepia.vercel.app/getSinglePost/${id}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -102,7 +107,7 @@ const UpdatePost = () => {
         person,
       };
       console.log(postInfo);
-      fetch(`http://localhost:5000/updatePost/${id}`, {
+      fetch(`https://blog-project-delta-sepia.vercel.app/updatePost/${id}`, {
         method: "PATCH",
         headers: {
           "content-type": "application/json",

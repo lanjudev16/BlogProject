@@ -1,8 +1,11 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../provider/AuthProvider";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 const SignIn = () => {
+  useEffect(() => {
+    document.title = "Sign in | NFTERS";
+  }, []);
   const {logIn}=useContext(AuthContext)
   const navigate=useNavigate()
   const {
@@ -92,10 +95,11 @@ const SignIn = () => {
         {/* Submit Button */}
         <button
           type="submit"
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          className="bg-[#3D00B7] hover:bg-[#430ab4] text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
         >
           Singin
         </button>
+        <p className="text-red-400 my-2 text-xl">New Here ? <span><Link to="/signup">Create an account</Link></span></p>
       </form>
     </div>
   );
