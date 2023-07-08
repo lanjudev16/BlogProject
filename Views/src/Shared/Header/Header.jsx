@@ -88,7 +88,7 @@ const Header = () => {
                 </span>
               </li>
               <span className="flex gap-2">{user ? <><Link to="/AddPost"><button className="px-5 py-3 rounded-md text-white outline-none bg-[#3D00B7]">Add Post</button></Link> <Link to="/myPost"><button className="px-5 py-3 rounded-md text-white outline-none bg-[#3D00B7]">My Post</button></Link> <button onClick={handleSignOut} className="px-5 py-3 rounded-md text-white outline-none bg-[#3D00B7]">Signout</button></>:<><Link to="/signin">Sign in</Link></> }</span>
-              <>{user?.photoURL ? <><img src={user?.photoURL} alt="" /></>:<><img src={person} alt="" /></>}</>
+              <>{user?.photoURL ? <><img className="w-[50px] h-[50px] rounded-full" src={user?.photoURL} alt="" /></>:<><img  src={person} alt="" /></>}</>
             </ul>
           </div>
         </div>

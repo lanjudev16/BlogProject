@@ -1,13 +1,50 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../provider/AuthProvider";
 import { Link, useNavigate } from "react-router-dom";
 const Signup = () => {
+  //image hosting code
+  const img_hosting_token = "df6b63e6f0242336c5dec606dd1ba6b4";
+  const img_hosting_url = "https://api.imgbb.com/1/upload";
+
+  const [selectedImage, setSelectedImage] = useState(null);
+  const [uploadedImageUrl, setUploadedImageUrl] = useState("");
+
+  const handleImageChange = (e) => {
+    setSelectedImage(e.target.files[0]);
+  };
+
+  if (selectedImage) {
+    try {
+      const formData = new FormData();
+      formData.append("image", selectedImage);
+
+      fetch(`https://api.imgbb.com/1/upload?key=${img_hosting_token}`, {
+        method: "POST",
+        body: formData,
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.status === 200) {
+            setUploadedImageUrl(data.data.url);
+            console.log(data.data.url);
+          } else {
+            console.error("Image upload failed");
+          }
+        });
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  console.log(uploadedImageUrl)
+  //image hosting code end
+
   useEffect(() => {
     document.title = "Signup | NFTERS";
   }, []);
-  const {createUser}=useContext(AuthContext)
-  const navigate=useNavigate()
+  const { createUser, updateUserProfile } = useContext(AuthContext);
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -22,11 +59,14 @@ const Signup = () => {
 
     // Handle form submission here
     console.log(data);
-    createUser(data.email,data.password).then(result=>{
-      navigate('/')
-    }).catch(error=>{
-      console.log(error.message)
-    })
+    createUser(data.email, data.password)
+      .then((result) => {
+        updateUserProfile(data.firstName, uploadedImageUrl);
+        navigate("/");
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
     // Reset the form
     reset(); // Assuming you have the `reset` function from React Hook Form
   };
@@ -34,13 +74,13 @@ const Signup = () => {
   const password = watch("password");
   const confirmPassword = watch("confirmPassword");
   return (
-    <div className="w-[1140px] mx-auto  mt-5">
+    <div className="lg:w-[1140px] mx-auto  lg:mt-5">
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="w-[780px] mx-auto card shadow px-10 pb-10"
+        className="lg:w-[780px] lg:mx-auto card my-[10px] mx-[40px]  shadow px-10 py-2"
       >
         {/* Email Field */}
-        <h2 className="py-5 text-4xl font-bold text-black text-center">
+        <h2 className="py-2 text-4xl font-bold text-[#3D00B7] text-center">
           Please Sign up
         </h2>
         <div className="mb-4 ">
@@ -122,6 +162,23 @@ const Signup = () => {
           )}
         </div>
 
+        <div className="form-control">
+          <label className="label">
+            <span className="label-text font-medium text-base text-[#232323]">
+              Picture URL
+            </span>
+          </label>
+          <label className="input-group">
+            <div>
+              <input
+                type="file"
+                accept="image/*"
+                onChange={handleImageChange}
+              />
+            </div>
+          </label>
+        </div>
+
         {/* First Name Field */}
         <div className="mb-4">
           <label
@@ -167,11 +224,16 @@ const Signup = () => {
         {/* Submit Button */}
         <button
           type="submit"
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          className="bg-[#3D00B7] hover:bg-[#3D00B7] text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
         >
           Submit
         </button>
-        <p className="text-red-400 my-2 text-xl">Already Have an Account <span><Link to="/signin">Signin</Link></span></p>
+        <p className="text-[#3D00B7] my-2 text-xl">
+          Already Have an Account?{" "}
+          <span>
+            <Link to="/signin">Signin</Link>
+          </span>
+        </p>
       </form>
     </div>
   );

@@ -40,7 +40,7 @@ const SignIn = () => {
         className="w-[780px] card shadow px-10 pb-10"
       >
         {/* Email Field */}
-        <h2 className="py-5 text-4xl font-bold text-black text-center">
+        <h2 className="py-5 text-4xl font-bold text-[#3D00B7] text-center">
           Please Sign In
         </h2>
         <div className="mb-4 ">
@@ -99,7 +99,7 @@ const SignIn = () => {
         >
           Singin
         </button>
-        <p className="text-red-400 my-2 text-xl">New Here ? <span><Link to="/signup">Create an account</Link></span></p>
+        <p className="text-[#3D00B7] my-2 text-xl">New Here ? <span><Link to="/signup">Create an account</Link></span></p>
       </form>
     </div>
   );

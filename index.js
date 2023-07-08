@@ -37,9 +37,14 @@ async function run() {
       console.log(result)
     })
     //post read here
-    app.get('/myPost',async(req,res)=>{
-      const result=await blogCollection.find().toArray()
+    app.get('/myPost/:email',async(req,res)=>{
+      const email=req.params.email
+      const filter={
+        authorEmail:email
+      }
+      const result=await blogCollection.find(filter).toArray()
       res.send(result)
+      console.log(email)
     })
     //post create here
     app.post('/addPost',async(req,res)=>{

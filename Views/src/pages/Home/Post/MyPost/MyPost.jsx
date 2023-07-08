@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { FaBookmark, FaEdit, FaTrash, FaTrashAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../provider/AuthProvider";
 const MyPost = () => {
-
+  const {user}=useContext(AuthContext)
   useEffect(() => {
     document.title = "My Post | NFTERS";
   }, []);
@@ -23,10 +24,11 @@ const MyPost = () => {
   };
 
   useEffect(() => {
-    fetch("https://blog-project-delta-sepia.vercel.app/myPost")
+    fetch(`https://blog-project-delta-sepia.vercel.app/myPost/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         setPost(data);
+        
       });
   }, [handleDelete]);
   return (
