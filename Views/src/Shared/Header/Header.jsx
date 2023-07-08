@@ -41,25 +41,27 @@ const Header = () => {
                 tabIndex={0}
                 className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
               >
-               <li>
+              <li className="w-full">
                 <a>Marketplace</a>
               </li>
-              <li>
+              <li className="w-full">
                 <a>Resource</a>
               </li>
-              <li>
+              <li className="w-full">
                 <a>About</a>
               </li>
-                
-              <li>
+              <li className="w-full hidden lg:block relative">
                 <input
                   type="text"
                   placeholder="Search"
                   className="border-[1px] border-[#EFEFEF] bg-white py-2 rounded-[100%] "
                 />
+                <span className="absolute top-0 right-0 bg-transparent">
+                <FaSearch className="text-[#757575]"></FaSearch>
+                </span>
               </li>
-              <button className="px-10 py-3 rounded-full text-white outline-none bg-[#3D00B7]">Upload</button>
-              <button className="px-10 py-3 rounded-full border-[1px] border-[#3D00B7] text-[#3D00B7] outline-none bg-white">Connect wallet</button>
+              <span className="lg:flex lg:flex-row flex-col  gap-2">{user ? <><Link to="/AddPost"><button className="w-full px-5 py-3 rounded-md text-white outline-none bg-[#3D00B7]">Add Post</button></Link> <Link to="/myPost"><button className="px-5 w-full lg:my-0 my-2 py-3 rounded-md text-white outline-none bg-[#3D00B7]">My Post</button></Link> <button onClick={handleSignOut} className="w-full px-5 py-3 rounded-md text-white outline-none bg-[#3D00B7]">Signout</button></>:<><Link to="/signin">Sign in</Link></> }</span>
+              <>{user?.photoURL ? <><img src={user?.photoURL} alt="" /></>:<><img className="hidden lg:block" src={person} alt="" /></>}</>
               </ul>
             </div>
             <Link to="/"> <img src={logo} alt="" /></Link>
