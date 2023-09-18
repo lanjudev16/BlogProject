@@ -1,6 +1,8 @@
 import React, { useContext, useEffect } from 'react';
 import Banner from '../Banner/Banner';
 import Blog from '../Blog/Blog';
+import BannerBottom from '../BannerBottom/BannerBottom';
+import TopCollection from '../TopCollection/TopCollection';
 
 const Home = () => {
     
@@ -10,7 +12,8 @@ const Home = () => {
     return (
         <div>
             <Banner ></Banner>
-            <Blog></Blog>
+            <BannerBottom></BannerBottom>
+            <TopCollection></TopCollection>
         </div>
     );
 };
