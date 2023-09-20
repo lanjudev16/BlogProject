@@ -1,9 +1,9 @@
 const DiscoverCard = ({cardData}) => {
     const {image,person,name,ethereum,ethValue}=cardData
     return (
-        <div className="bg-white shadow-md rounded-md p-3">
+        <div className="bg-white shadow-md rounded-md p-3 lg:mx-0 mx-5">
             <div className='relative'>
-                <img src={image} alt="" />
+                <img className="w-full object-cover" src={image} alt="" />
                 <div className='flex absolute bottom-[-7%] left-3 items-center '>
                     {
                         person.map((item,index)=><img key={index} className='' src={item} alt="" />)

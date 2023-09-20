@@ -20,6 +20,7 @@ const Home = () => {
             <CollectionFeature></CollectionFeature>
             <CreateAndSell></CreateAndSell>
             <DiscoverMore></DiscoverMore>
+            <Blog></Blog>
         </div>
     );
 };

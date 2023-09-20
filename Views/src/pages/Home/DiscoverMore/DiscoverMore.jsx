@@ -9,7 +9,7 @@ import person3 from '../../../../public/DiscoverMore/person3.png'
 import person4 from '../../../../public/DiscoverMore/person4.png'
 import ethereum2 from '../../../../public/TopCollection/Person/ethereum2.png'
 import PrimaryButton from "../../../Shared/Button/PrimaryButton";
-import SecondaryButton from "../../../Shared/Button/SecondaryButton";
+import { FaBeer, FaFilter, FaSort } from 'react-icons/fa';
 const DiscoverMore = () => {
     const data = [
         {
@@ -127,17 +127,20 @@ const DiscoverMore = () => {
     ]
     return (
         <div className="bg-[#F7F8FA] py-10">
-            <div className="lg:w-[1140px] mx-auto">
-                <div className="mb-5">
-                    <h2 className="text-[34px] font-extrabold text-black  uppercase">Discover more nfts</h2>
-                    <div className="grid lg:grid-cols-7 gap-3 my-8">
-                        <PrimaryButton>All Categories</PrimaryButton>
-                        <SecondaryButton>Art</SecondaryButton>
-                        <SecondaryButton>Celebrities</SecondaryButton>
-                        <SecondaryButton>Gaming</SecondaryButton>
-                        <SecondaryButton>Sport</SecondaryButton>
-                        <SecondaryButton>Music</SecondaryButton>
-                        <SecondaryButton>Crypto</SecondaryButton>
+            <div className="lg:w-[1140px] lg:mx-auto ">
+                <div className="mb-5 lg:mx-0 mx-5">
+                    <h2 className="lg:text-[34px] text-2xl font-extrabold text-black  uppercase">Discover more nfts</h2>
+                    <div className="flex justify-between my-8">
+                        <div className="flex flex-wrap gap-2 items-center">
+                            <PrimaryButton>All Categories</PrimaryButton>
+                            <button className="bg-[#DCDCDC] px-5 font-semibold py-2 rounded-full">Art</button>
+                            <button className="bg-[#DCDCDC] px-5 font-semibold py-2 rounded-full">Celebrities</button>
+                            <button className="bg-[#DCDCDC] px-5 font-semibold py-2 rounded-full">Gaming</button>
+                            <button className="bg-[#DCDCDC] px-5 font-semibold py-2 rounded-full">Sport</button>
+                            <button className="bg-[#DCDCDC] px-5 font-semibold py-2 rounded-full">Music</button>
+                            <button className="bg-[#DCDCDC] px-5 font-semibold py-2 rounded-full">Crypto</button>
+                        </div>
+                        <button className="bg-[#DCDCDC] px-5 lg:h-full h-[50px] font-semibold py-2 rounded-full"><span className="flex justify-between items-center"><FaSort></FaSort>  <span>Filter</span></span></button>
                     </div>
                 </div>
                 <div className=" grid lg:grid-cols-4 gap-5">

@@ -13,7 +13,7 @@ import ethereum2 from '../../../../public/TopCollection/Person/ethereum2.png'
 const TopCollection = () => {
     return (
         <div className='mb-10'>
-            <div className='lg:w-[1140px] mx-auto grid lg:grid-cols-3 gap-5'>
+            <div className='lg:w-[1140px] lg:mx-auto mx-5 grid lg:grid-cols-3 gap-5'>
                 <div>
                     <img src={image1} alt="" />
                     <div className='flex justify-between'>

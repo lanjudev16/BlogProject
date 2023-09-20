@@ -11,12 +11,11 @@ const containerStyle = {
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
     width: '100%',
-    height: '80vh',
 };
 const Banner = () => {
     AOS.init();
     return (
-        <div className='lg:w-[1140px] mx-auto grid lg:grid-cols-2 grid-cols-1 gap-5 mt-5 lg:mt-10 items-center'>
+        <div className='lg:w-[1140px] lg:mx-auto grid lg:grid-cols-2 grid-cols-1 gap-5 mt-5 lg:mt-10 items-center'>
             <div
                 data-aos="fade-left"
                 data-aos-offset="200"
@@ -42,7 +41,7 @@ const Banner = () => {
                     </div>
                 </div>
             </div>
-            <div style={containerStyle} className='relative'>
+            <div style={containerStyle} className='relative h-[40vh] lg:mx-0 lg:h-[80vh] '>
                 <div className='ml-[85px] mt-10'>
                     <h2 className=' text-white font-bold text-[28px]'>Abstr Gradient NFT</h2>
                     <div className='flex gap-5 items-center mt-3'>

@@ -7,7 +7,7 @@ import person3 from '../../../../public/CreateAndSell/person3.png'
 import PrimaryButton from '../../../Shared/Button/PrimaryButton'
 const CreateAndSell = () => {
     return (
-        <div className="lg:w-[1140px] mx-auto grid lg:grid-cols-2 gap-10 my-10 items-center">
+        <div className="lg:w-[1140px] lg:mx-auto mx-5 grid lg:grid-cols-2 gap-10 my-10 items-center">
             <div className="flex items-center gap-10">
                 <div className='flex-col'>
                     <div className='relative'>
@@ -25,8 +25,8 @@ const CreateAndSell = () => {
                 </div>
             </div>
             <div>
-                <h2 className='font-extrabold text-[32px] text-black uppercase'>Create and <br /> sell your nfts</h2>
-                <p className='text-[#636363] text-[18px] my-5'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Facilisi ac phasellus placerat a pellentesque tellus sed egestas. Et tristique dictum sit tristique sed non. Lacinia lorem id consectetur pretium diam ut. Pellentesque eu sit blandit fringilla risus faucibus.</p>
+                <h2 className='font-extrabold lg:text-[32px] text-2xl text-black uppercase'>Create and <br /> sell your nfts</h2>
+                <p className='text-[#636363] lg:text-[18px] text-base my-5'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Facilisi ac phasellus placerat a pellentesque tellus sed egestas. Et tristique dictum sit tristique sed non. Lacinia lorem id consectetur pretium diam ut. Pellentesque eu sit blandit fringilla risus faucibus.</p>
                 <PrimaryButton>Sign Up Now</PrimaryButton>
             </div>
         </div>

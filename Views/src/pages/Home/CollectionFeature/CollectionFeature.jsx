@@ -14,9 +14,9 @@ import person1 from '../../../../public/CollectionFeatures/person1.png'
 const CollectionFeature = () => {
     return (
         <div className="bg-[#F7F8FA]">
-            <div className="lg:w-[1140px] mx-auto py-10">
-                <h2 className="text-black font-extrabold text-3xl uppercase">Collection features nfts</h2>
-                <div className="grid lg:grid-cols-3 gap-10 mt-5">
+            <div className="lg:w-[1140px] lg:mx-auto mx-5 py-10">
+                <h2 className="text-black font-extrabold text-2xl lg:text-3xl uppercase">Collection features nfts</h2>
+                <div className="grid lg:grid-cols-3 lg:gap-10 gap-5 mt-5">
                     <div>
                         <div className="flex justify-between gap-2 ">
                             <div className="col-span-2">
