@@ -4,8 +4,11 @@ import { FaBeer, FaBookmark, FaRegBookmark, FaSearch, FaShoppingBag, FaShoppingC
 import { AuthContext } from "../../pages/provider/AuthProvider";
 import person from '../../../public/Blog/person.png'
 import { Link, useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 const Header = () => {
   const { user, loading, logOut } = useContext(AuthContext)
+  const book = useSelector((state) => state.bookMark.value)
+  console.log(book)
   const navigate = useNavigate()
   const handleSignOut = () => {
     logOut().then(result => {
@@ -72,8 +75,9 @@ const Header = () => {
               <li>
                 <Link to="/myCart"><FaShoppingBag></FaShoppingBag></Link>
               </li>
-              <li>
+              <li className="relative">
                 <Link to="/bookMark"><FaRegBookmark></FaRegBookmark></Link>
+                <span className="absolute top-[-6px] left-[-6px] text-white text-base max-w-[8px] max-h-[8px] flex items-center justify-center font-bold bg-[#fdbf01]  rounded-full">{book}</span>
               </li>
               
               <li>
