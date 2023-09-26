@@ -1,21 +1,21 @@
 import React, { useContext } from "react";
 import logo from '../../../public/Header/NFters.png'
-import { FaBeer, FaBookmark, FaRegBookmark, FaSearch } from 'react-icons/fa';
+import { FaBeer, FaBookmark, FaRegBookmark, FaSearch, FaShoppingBag, FaShoppingCart } from 'react-icons/fa';
 import { AuthContext } from "../../pages/provider/AuthProvider";
 import person from '../../../public/Blog/person.png'
 import { Link, useNavigate } from "react-router-dom";
 const Header = () => {
-  const {user,loading,logOut}=useContext(AuthContext)
-  const navigate=useNavigate()
-  const handleSignOut=()=>{
-    logOut().then(result=>{
+  const { user, loading, logOut } = useContext(AuthContext)
+  const navigate = useNavigate()
+  const handleSignOut = () => {
+    logOut().then(result => {
       navigate("/signin")
-    }).catch(error=>{
+    }).catch(error => {
       console.log(error)
     })
   }
   console.log(user)
-  if(!loading){
+  if (!loading) {
     return (
       <div className="bg-base shadow py-3">
         <div className="navbar lg:w-[1140px] mx-auto flex justify-between">
@@ -41,27 +41,28 @@ const Header = () => {
                 tabIndex={0}
                 className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
               >
-              <li className="w-full">
-                <a>Marketplace</a>
+                <li>
+                <Link to="/myCart"><FaShoppingBag></FaShoppingBag></Link>
               </li>
-              <li className="w-full">
-                <a>About</a>
-              </li>
-              <li>
-                <Link to="/bookMark"><FaRegBookmark></FaRegBookmark></Link>
-              </li>
-              <li className="w-full hidden lg:block relative">
-                <input
-                  type="text"
-                  placeholder="Search"
-                  className="border-[1px] border-[#EFEFEF] bg-white py-2 rounded-[100%] "
-                />
-                <span className="absolute top-0 right-0 bg-transparent">
-                <FaSearch className="text-[#757575]"></FaSearch>
-                </span>
-              </li>
-              <span className="lg:flex lg:flex-row flex-col  gap-2">{user ? <><Link to="/AddPost"><button className="w-full px-5 py-3 rounded-md text-white outline-none bg-[#3D00B7]">Add Post</button></Link> <Link to="/myPost"><button className="px-5 w-full lg:my-0 my-2 py-3 rounded-md text-white outline-none bg-[#3D00B7]">My Post</button></Link> <button onClick={handleSignOut} className="w-full px-5 py-3 rounded-md text-white outline-none bg-[#3D00B7]">Signout</button></>:<><Link to="/signin">Sign in</Link></> }</span>
-              <>{user?.photoURL ? <><img src={user?.photoURL} alt="" /></>:<><img className="hidden lg:block" src={person} alt="" /></>}</>
+                
+                <li>
+                  <Link to="/bookMark"><FaRegBookmark></FaRegBookmark></Link>
+                </li>
+                <li className="w-full">
+                  <a>About</a>
+                </li>
+                <li className="w-full hidden lg:block relative">
+                  <input
+                    type="text"
+                    placeholder="Search"
+                    className="border-[1px] border-[#EFEFEF] bg-white py-2 rounded-[100%] "
+                  />
+                  <span className="absolute top-0 right-0 bg-transparent">
+                    <FaSearch className="text-[#757575]"></FaSearch>
+                  </span>
+                </li>
+                <span className="lg:flex lg:flex-row flex-col  gap-2">{user ? <><Link to="/AddPost"><button className="w-full px-5 py-3 rounded-md text-white outline-none bg-[#3D00B7]">Add Post</button></Link> <Link to="/myPost"><button className="px-5 w-full lg:my-0 my-2 py-3 rounded-md text-white outline-none bg-[#3D00B7]">My Post</button></Link> <button onClick={handleSignOut} className="w-full px-5 py-3 rounded-md text-white outline-none bg-[#3D00B7]">Signout</button></> : <><Link to="/signin">Sign in</Link></>}</span>
+                <>{user?.photoURL ? <><img src={user?.photoURL} alt="" /></> : <><img className="hidden lg:block" src={person} alt="" /></>}</>
               </ul>
             </div>
             <Link to="/"> <img src={logo} alt="" /></Link>
@@ -69,13 +70,14 @@ const Header = () => {
           <div className=" hidden lg:flex">
             <ul className="menu menu-horizontal px-1 items-center gap-3">
               <li>
-                <a>Marketplace</a>
-              </li>
-              <li>
-                <a>About</a>
+                <Link to="/myCart"><FaShoppingBag></FaShoppingBag></Link>
               </li>
               <li>
                 <Link to="/bookMark"><FaRegBookmark></FaRegBookmark></Link>
+              </li>
+              
+              <li>
+                <a>About</a>
               </li>
               <li className="relative">
                 <input
@@ -84,17 +86,17 @@ const Header = () => {
                   className="border-[1px] border-[#EFEFEF] bg-white py-2 rounded-[100%] "
                 />
                 <span className="absolute top-0 right-0 bg-transparent">
-                <FaSearch className="text-[#757575]"></FaSearch>
+                  <FaSearch className="text-[#757575]"></FaSearch>
                 </span>
               </li>
-              <span className="flex gap-2">{user ? <><Link to="/AddPost"><button className="px-5 py-3 rounded-md text-white outline-none bg-[#3D00B7]">Add Post</button></Link> <Link to="/myPost"><button className="px-5 py-3 rounded-md text-white outline-none bg-[#3D00B7]">My Post</button></Link> <button onClick={handleSignOut} className="px-5 py-3 rounded-md text-white outline-none bg-[#3D00B7]">Signout</button></>:<><Link to="/signin">Sign in</Link></> }</span>
-              <>{user?.photoURL ? <><img className="w-[50px] h-[50px] rounded-full" src={user?.photoURL} alt="" /></>:<><img  src={person} alt="" /></>}</>
+              <span className="flex gap-2">{user ? <><Link to="/AddPost"><button className="px-5 py-3 rounded-md text-white outline-none bg-[#3D00B7]">Add Post</button></Link> <Link to="/myPost"><button className="px-5 py-3 rounded-md text-white outline-none bg-[#3D00B7]">My Post</button></Link> <button onClick={handleSignOut} className="px-5 py-3 rounded-md text-white outline-none bg-[#3D00B7]">Signout</button></> : <><Link to="/signin">Sign in</Link></>}</span>
+              <>{user?.photoURL ? <><img className="w-[50px] h-[50px] rounded-full" src={user?.photoURL} alt="" /></> : <><img src={person} alt="" /></>}</>
             </ul>
           </div>
         </div>
       </div>
     );
-  }else{
+  } else {
     return <div className="h-[100vh] flex justify-center items-center">Loading...</div>
   }
 

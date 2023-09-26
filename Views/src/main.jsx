@@ -13,6 +13,9 @@ import AddPost from "./pages/Home/Post/AddPost/AddPost";
 import MyPost from "./pages/Home/Post/MyPost/MyPost";
 import UpdatePost from "./pages/Home/Post/UpdatePost/UpdatePost";
 import BookMark from "./pages/BookMark/BookMark";
+import MyCart from "./pages/MyCart/MyCart";
+import { Provider } from "react-redux";
+import { store } from "./app/store";
 
 const router = createBrowserRouter([
   {
@@ -24,20 +27,24 @@ const router = createBrowserRouter([
         element: <Home></Home>,
       },
       {
-        path:"/AddPost",
-        element:<AddPost></AddPost>
+        path: "/AddPost",
+        element: <AddPost></AddPost>
       },
       {
-        path:"/myPost",
-        element:<MyPost></MyPost>
+        path: "/myPost",
+        element: <MyPost></MyPost>
       },
       {
-        path:"/updatePost/:id",
-        element:<UpdatePost></UpdatePost>
+        path: "/updatePost/:id",
+        element: <UpdatePost></UpdatePost>
       },
       {
-        path:"bookMark",
-        element:<BookMark></BookMark>
+        path: "bookMark",
+        element: <BookMark></BookMark>
+      },
+      {
+        path: "/myCart",
+        element: <MyCart></MyCart>
       }
     ],
   },
@@ -46,16 +53,18 @@ const router = createBrowserRouter([
     element: <Signup></Signup>,
   },
   {
-    path:"/signin",
-    element:<SignIn></SignIn>
+    path: "/signin",
+    element: <SignIn></SignIn>
   },
 
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <AuthProvider>
-      <RouterProvider router={router} />
-    </AuthProvider>
+    <Provider store={store}>
+      <AuthProvider>
+        <RouterProvider router={router} />
+      </AuthProvider>
+    </Provider>
   </React.StrictMode>
 );
