@@ -12,6 +12,7 @@ import SignIn from "./pages/SignIn/SignIn";
 import AddPost from "./pages/Home/Post/AddPost/AddPost";
 import MyPost from "./pages/Home/Post/MyPost/MyPost";
 import UpdatePost from "./pages/Home/Post/UpdatePost/UpdatePost";
+import BookMark from "./pages/BookMark/BookMark";
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
       {
         path:"/updatePost/:id",
         element:<UpdatePost></UpdatePost>
+      },
+      {
+        path:"bookMark",
+        element:<BookMark></BookMark>
       }
     ],
   },
@@ -43,7 +48,8 @@ const router = createBrowserRouter([
   {
     path:"/signin",
     element:<SignIn></SignIn>
-  }
+  },
+
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(

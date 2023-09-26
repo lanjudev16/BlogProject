@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import logo from '../../../public/Header/NFters.png'
-import { FaBeer, FaSearch } from 'react-icons/fa';
+import { FaBeer, FaBookmark, FaRegBookmark, FaSearch } from 'react-icons/fa';
 import { AuthContext } from "../../pages/provider/AuthProvider";
 import person from '../../../public/Blog/person.png'
 import { Link, useNavigate } from "react-router-dom";
@@ -45,10 +45,10 @@ const Header = () => {
                 <a>Marketplace</a>
               </li>
               <li className="w-full">
-                <a>Resource</a>
-              </li>
-              <li className="w-full">
                 <a>About</a>
+              </li>
+              <li>
+                <Link to="/bookMark"><FaRegBookmark></FaRegBookmark></Link>
               </li>
               <li className="w-full hidden lg:block relative">
                 <input
@@ -72,10 +72,10 @@ const Header = () => {
                 <a>Marketplace</a>
               </li>
               <li>
-                <a>Resource</a>
+                <a>About</a>
               </li>
               <li>
-                <a>About</a>
+                <Link to="/bookMark"><FaRegBookmark></FaRegBookmark></Link>
               </li>
               <li className="relative">
                 <input
