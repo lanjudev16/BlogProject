@@ -3,27 +3,26 @@ import person from "../../../../public/Blog/person.png";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import {
-  FaBookmark,
-  FaEye,
-  FaRegBookmark,
-  FaShopware,
-  FaStar,
-  FaStarHalf,
+    FaBookmark,
+    FaEye,
+    FaRegBookmark,
+    FaShopware,
+    FaStar,
+    FaStarHalf,
 } from "react-icons/fa";
 import Rating from "react-rating";
-const SignleBookMark = ({singleBlogPost}) => {
+import { useDispatch, useSelector } from 'react-redux';
+import { isBookMark } from '../../../features/BookMark/BookMarkSlice';
+const SignleBookMark = ({ singleBlogPost }) => {
+    // redux implement here
+    const book = useSelector((state) => state.bookMark.value)
+    const dispatch = useDispatch()
+    console.log(book);
+
     const [bookMark, setBookMark] = useState(false);
     return (
         <div
             className="flex flex-col card shadow mx-5 lg:mx-0"
-        // data-aos="zoom-in-up"
-        // data-aos-offset="200"
-        // data-aos-delay="500"
-        // data-aos-duration="1000"
-        // data-aos-easing="ease-in-out"
-        // data-aos-mirror="true"
-        // data-aos-once="false"
-        // data-aos-anchor-placement="top-center"
         >
             <div className="bg-[#F3F3F3] px-5 py-3 flex justify-between items-center">
                 <div className="flex gap-2">
@@ -33,12 +32,19 @@ const SignleBookMark = ({singleBlogPost}) => {
                         <span>{singleBlogPost?.postDate}</span>
                     </div>
                 </div>
-                <div className="flex gap-3">
-                    <span onClick={() => setBookMark(!bookMark)} className="cursor-pointer">
+                <div className="flex gap-3 " >
+                    <button onClick={() => {
+                        setBookMark(true)
+                        , dispatch(isBookMark())
+                    }} 
+                    disabled={bookMark}
+                    >
                         {
-                            bookMark ? <FaBookmark></FaBookmark> : <FaRegBookmark></FaRegBookmark>
+                            bookMark ? <div><FaBookmark></FaBookmark></div> : <div >
+                                <FaRegBookmark></FaRegBookmark>
+                            </div>
                         }
-                    </span>
+                    </button>
                     <span>
                         <FaShopware></FaShopware>
                     </span>
