@@ -127,8 +127,151 @@ const DiscoverMore = () => {
             ethValue: 0.25,
         },
     ]
+
     const data1 = [
-        
+        {
+            image: image4,
+            person: [person1, person2, person3, person4],
+            name: "Aspect",
+            ethereum: ethereum2,
+            ethValue: 0.25,
+        },
+        {
+            image: image3,
+            person: [person1, person2, person3, person4],
+            name: "Aspect",
+            ethereum: ethereum2,
+            ethValue: 0.25,
+        },
+        {
+            image: image3,
+            person: [person1, person2, person3, person4],
+            name: "Aspect",
+            ethereum: ethereum2,
+            ethValue: 0.25,
+        },
+        {
+            image: image2,
+            person: [person1, person2, person3, person4],
+            name: "Aspect",
+            ethereum: ethereum2,
+            ethValue: 0.25,
+        },
+        {
+            image: image1,
+            person: [person1, person2, person3, person4],
+            name: "Aspect",
+            ethereum: ethereum2,
+            ethValue: 0.25,
+        },
+        {
+            image: image3,
+            person: [person1, person2, person3, person4],
+            name: "Aspect",
+            ethereum: ethereum2,
+            ethValue: 0.25,
+        },
+        {
+            image: image2,
+            person: [person1, person2, person3, person4],
+            name: "Aspect",
+            ethereum: ethereum2,
+            ethValue: 0.25,
+        },
+        {
+            image: image1,
+            person: [person1, person2, person3, person4],
+            name: "Aspect",
+            ethereum: ethereum2,
+            ethValue: 0.25,
+        },
+        {
+            image: image2,
+            person: [person1, person2, person3, person4],
+            name: "Aspect",
+            ethereum: ethereum2,
+            ethValue: 0.25,
+        },
+        {
+            image: image1,
+            person: [person1, person2, person3, person4],
+            name: "Aspect",
+            ethereum: ethereum2,
+            ethValue: 0.25,
+        },
+        {
+            image: image4,
+            person: [person1, person2, person3, person4],
+            name: "Aspect",
+            ethereum: ethereum2,
+            ethValue: 0.25,
+        },
+        {
+            image: image3,
+            person: [person1, person2, person3, person4],
+            name: "Aspect",
+            ethereum: ethereum2,
+            ethValue: 0.25,
+        },
+        {
+            image: image3,
+            person: [person1, person2, person3, person4],
+            name: "Aspect",
+            ethereum: ethereum2,
+            ethValue: 0.25,
+        },
+        {
+            image: image2,
+            person: [person1, person2, person3, person4],
+            name: "Aspect",
+            ethereum: ethereum2,
+            ethValue: 0.25,
+        },
+        {
+            image: image4,
+            person: [person1, person2, person3, person4],
+            name: "Aspect",
+            ethereum: ethereum2,
+            ethValue: 0.25,
+        },
+        {
+            image: image1,
+            person: [person1, person2, person3, person4],
+            name: "Aspect",
+            ethereum: ethereum2,
+            ethValue: 0.25,
+        },
+    ]
+
+    const data2 = [
+        {
+            image: image1,
+            person: [person1, person2, person3, person4],
+            name: "Aspect",
+            ethereum: ethereum2,
+            ethValue: 0.25,
+        },
+        {
+            image: image2,
+            person: [person1, person2, person3, person4],
+            name: "Aspect",
+            ethereum: ethereum2,
+            ethValue: 0.25,
+        },
+        {
+            image: image3,
+            person: [person1, person2, person3, person4],
+            name: "Aspect",
+            ethereum: ethereum2,
+            ethValue: 0.25,
+        },
+        {
+            image: image4,
+            person: [person1, person2, person3, person4],
+            name: "Aspect",
+            ethereum: ethereum2,
+            ethValue: 0.25,
+        },
         {
             image: image4,
             person: [person1, person2, person3, person4],
@@ -214,6 +357,157 @@ const DiscoverMore = () => {
             ethValue: 0.25,
         },
     ]
+    const data3 = [
+        {
+            image: image2,
+            person: [person1, person2, person3, person4],
+            name: "Aspect",
+            ethereum: ethereum2,
+            ethValue: 0.25,
+        },
+        {
+            image: image1,
+            person: [person1, person2, person3, person4],
+            name: "Aspect",
+            ethereum: ethereum2,
+            ethValue: 0.25,
+        },
+        {
+            image: image4,
+            person: [person1, person2, person3, person4],
+            name: "Aspect",
+            ethereum: ethereum2,
+            ethValue: 0.25,
+        },
+        {
+            image: image3,
+            person: [person1, person2, person3, person4],
+            name: "Aspect",
+            ethereum: ethereum2,
+            ethValue: 0.25,
+        },
+        {
+            image: image3,
+            person: [person1, person2, person3, person4],
+            name: "Aspect",
+            ethereum: ethereum2,
+            ethValue: 0.25,
+        },
+        {
+            image: image2,
+            person: [person1, person2, person3, person4],
+            name: "Aspect",
+            ethereum: ethereum2,
+            ethValue: 0.25,
+        },
+        {
+            image: image4,
+            person: [person1, person2, person3, person4],
+            name: "Aspect",
+            ethereum: ethereum2,
+            ethValue: 0.25,
+        },
+        {
+            image: image1,
+            person: [person1, person2, person3, person4],
+            name: "Aspect",
+            ethereum: ethereum2,
+            ethValue: 0.25,
+        },
+    ]
+    const data4 = [
+        {
+            image: image2,
+            person: [person1, person2, person3, person4],
+            name: "Aspect",
+            ethereum: ethereum2,
+            ethValue: 0.25,
+        },
+        {
+            image: image1,
+            person: [person1, person2, person3, person4],
+            name: "Aspect",
+            ethereum: ethereum2,
+            ethValue: 0.25,
+        },
+        {
+            image: image4,
+            person: [person1, person2, person3, person4],
+            name: "Aspect",
+            ethereum: ethereum2,
+            ethValue: 0.25,
+        },
+        {
+            image: image3,
+            person: [person1, person2, person3, person4],
+            name: "Aspect",
+            ethereum: ethereum2,
+            ethValue: 0.25,
+        },
+    ]
+    const data5 = [
+        {
+            image: image3,
+            person: [person1, person2, person3, person4],
+            name: "Aspect",
+            ethereum: ethereum2,
+            ethValue: 0.25,
+        },
+        {
+            image: image2,
+            person: [person1, person2, person3, person4],
+            name: "Aspect",
+            ethereum: ethereum2,
+            ethValue: 0.25,
+        },
+        {
+            image: image4,
+            person: [person1, person2, person3, person4],
+            name: "Aspect",
+            ethereum: ethereum2,
+            ethValue: 0.25,
+        },
+        {
+            image: image1,
+            person: [person1, person2, person3, person4],
+            name: "Aspect",
+            ethereum: ethereum2,
+            ethValue: 0.25,
+        },
+    ]
+    const data6 = [
+        {
+            image: image2,
+            person: [person1, person2, person3, person4],
+            name: "Aspect",
+            ethereum: ethereum2,
+            ethValue: 0.25,
+        },
+        {
+            image: image1,
+            person: [person1, person2, person3, person4],
+            name: "Aspect",
+            ethereum: ethereum2,
+            ethValue: 0.25,
+        },
+        {
+            image: image4,
+            person: [person1, person2, person3, person4],
+            name: "Aspect",
+            ethereum: ethereum2,
+            ethValue: 0.25,
+        },
+        {
+            image: image3,
+            person: [person1, person2, person3, person4],
+            name: "Aspect",
+            ethereum: ethereum2,
+            ethValue: 0.25,
+        },
+    ]
+    
+
+
     return (
         <Tabs>
             <div className="bg-[#F7F8FA] py-10">
@@ -223,13 +517,20 @@ const DiscoverMore = () => {
                             <h2 className="lg:text-[34px] text-2xl font-extrabold text-black  uppercase">Discover more nfts</h2>
                             <div className="flex justify-between my-8">
                                 <div className="flex flex-wrap gap-2 items-center">
-                                    <Tab><PrimaryButton>All Categories</PrimaryButton></Tab>
+                                    <Tab><button className="bg-[#DCDCDC] px-5 font-semibold py-2 rounded-full">All Categories</button></Tab>
                                     <Tab><button className="bg-[#DCDCDC] px-5 font-semibold py-2 rounded-full">Art</button></Tab>
-                                    <button className="bg-[#DCDCDC] px-5 font-semibold py-2 rounded-full">Celebrities</button>
-                                    <button className="bg-[#DCDCDC] px-5 font-semibold py-2 rounded-full">Gaming</button>
-                                    <button className="bg-[#DCDCDC] px-5 font-semibold py-2 rounded-full">Sport</button>
-                                    <button className="bg-[#DCDCDC] px-5 font-semibold py-2 rounded-full">Music</button>
-                                    <button className="bg-[#DCDCDC] px-5 font-semibold py-2 rounded-full">Crypto</button>
+                                    <Tab>
+                                        <button className="bg-[#DCDCDC] px-5 font-semibold py-2 rounded-full">Celebrities</button></Tab>
+                                    <Tab>
+                                        <button className="bg-[#DCDCDC] px-5 font-semibold py-2 rounded-full">Gaming</button>
+                                    </Tab>
+                                    <Tab>
+                                        <button className="bg-[#DCDCDC] px-5 font-semibold py-2 rounded-full">Sport</button>
+                                    </Tab>
+                                    <Tab>
+                                        <button className="bg-[#DCDCDC] px-5 font-semibold py-2 rounded-full">Music</button>
+                                    </Tab>
+                                    <Tab><button className="bg-[#DCDCDC] px-5 font-semibold py-2 rounded-full">Crypto</button></Tab>
                                 </div>
                                 <button className="bg-[#DCDCDC] px-5 lg:h-full h-[50px] font-semibold py-2 rounded-full"><span className="flex justify-between items-center"><FaSort></FaSort>  <span>Filter</span></span></button>
                             </div>
@@ -248,6 +549,46 @@ const DiscoverMore = () => {
 
                             {
                                 data1.map((item, index) => <DiscoverCard key={index} cardData={item}></DiscoverCard>)
+                            }
+                        </div>
+                    </TabPanel>
+                    <TabPanel>
+                        <div className=" grid lg:grid-cols-4 gap-5">
+
+                            {
+                                data2.map((item, index) => <DiscoverCard key={index} cardData={item}></DiscoverCard>)
+                            }
+                        </div>
+                    </TabPanel>
+                    <TabPanel>
+                        <div className=" grid lg:grid-cols-4 gap-5">
+
+                            {
+                                data3.map((item, index) => <DiscoverCard key={index} cardData={item}></DiscoverCard>)
+                            }
+                        </div>
+                    </TabPanel>
+                    <TabPanel>
+                        <div className=" grid lg:grid-cols-4 gap-5">
+
+                            {
+                                data4.map((item, index) => <DiscoverCard key={index} cardData={item}></DiscoverCard>)
+                            }
+                        </div>
+                    </TabPanel>
+                    <TabPanel>
+                        <div className=" grid lg:grid-cols-4 gap-5">
+
+                            {
+                                data5.map((item, index) => <DiscoverCard key={index} cardData={item}></DiscoverCard>)
+                            }
+                        </div>
+                    </TabPanel>
+                    <TabPanel>
+                        <div className=" grid lg:grid-cols-4 gap-5">
+
+                            {
+                                data6.map((item, index) => <DiscoverCard key={index} cardData={item}></DiscoverCard>)
                             }
                         </div>
                     </TabPanel>

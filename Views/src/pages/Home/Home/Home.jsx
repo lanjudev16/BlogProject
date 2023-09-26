@@ -6,7 +6,7 @@ import TopCollection from '../TopCollection/TopCollection';
 import CollectionFeature from '../CollectionFeature/CollectionFeature';
 import CreateAndSell from '../CreateAndSell/CreateAndSell';
 import DiscoverMore from '../DiscoverMore/DiscoverMore';
-
+import './Home.css'
 const Home = () => {
     
     useEffect(() => {

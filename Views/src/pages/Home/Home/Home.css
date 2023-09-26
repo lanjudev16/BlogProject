@@ -1,0 +1,21 @@
+.react-tabs__tab--selected {
+    background:transparent;
+    border-color: transparent;
+    border-bottom-color: transparent;
+    border-radius: 30%;
+}
+.react-tabs__tab--selected button {
+    background-color: #7d20bf;
+    color: #fff;
+}
+.react-tabs__tab--selected::after{
+    border-bottom: 0px solid transparent;
+    background-color: #7d20bf;
+}
+.react-tabs__tab {
+    border: 0px solid transparent; 
+}
+li.react__tab--selected::after {
+    width: 0px;
+    height: 0px;
+}
