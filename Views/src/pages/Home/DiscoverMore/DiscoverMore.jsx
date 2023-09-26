@@ -10,6 +10,8 @@ import person4 from '../../../../public/DiscoverMore/person4.png'
 import ethereum2 from '../../../../public/TopCollection/Person/ethereum2.png'
 import PrimaryButton from "../../../Shared/Button/PrimaryButton";
 import { FaBeer, FaFilter, FaSort } from 'react-icons/fa';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import 'react-tabs/style/react-tabs.css';
 const DiscoverMore = () => {
     const data = [
         {
@@ -125,32 +127,133 @@ const DiscoverMore = () => {
             ethValue: 0.25,
         },
     ]
+    const data1 = [
+        
+        {
+            image: image4,
+            person: [person1, person2, person3, person4],
+            name: "Aspect",
+            ethereum: ethereum2,
+            ethValue: 0.25,
+        },
+        {
+            image: image3,
+            person: [person1, person2, person3, person4],
+            name: "Aspect",
+            ethereum: ethereum2,
+            ethValue: 0.25,
+        },
+        {
+            image: image2,
+            person: [person1, person2, person3, person4],
+            name: "Aspect",
+            ethereum: ethereum2,
+            ethValue: 0.25,
+        },
+        {
+            image: image1,
+            person: [person1, person2, person3, person4],
+            name: "Aspect",
+            ethereum: ethereum2,
+            ethValue: 0.25,
+        },
+        {
+            image: image2,
+            person: [person1, person2, person3, person4],
+            name: "Aspect",
+            ethereum: ethereum2,
+            ethValue: 0.25,
+        },
+        {
+            image: image1,
+            person: [person1, person2, person3, person4],
+            name: "Aspect",
+            ethereum: ethereum2,
+            ethValue: 0.25,
+        },
+        {
+            image: image4,
+            person: [person1, person2, person3, person4],
+            name: "Aspect",
+            ethereum: ethereum2,
+            ethValue: 0.25,
+        },
+        {
+            image: image3,
+            person: [person1, person2, person3, person4],
+            name: "Aspect",
+            ethereum: ethereum2,
+            ethValue: 0.25,
+        },
+        {
+            image: image3,
+            person: [person1, person2, person3, person4],
+            name: "Aspect",
+            ethereum: ethereum2,
+            ethValue: 0.25,
+        },
+        {
+            image: image2,
+            person: [person1, person2, person3, person4],
+            name: "Aspect",
+            ethereum: ethereum2,
+            ethValue: 0.25,
+        },
+        {
+            image: image4,
+            person: [person1, person2, person3, person4],
+            name: "Aspect",
+            ethereum: ethereum2,
+            ethValue: 0.25,
+        },
+        {
+            image: image1,
+            person: [person1, person2, person3, person4],
+            name: "Aspect",
+            ethereum: ethereum2,
+            ethValue: 0.25,
+        },
+    ]
     return (
-        <div className="bg-[#F7F8FA] py-10">
-            <div className="lg:w-[1140px] lg:mx-auto ">
-                <div className="mb-5 lg:mx-0 mx-5">
-                    <h2 className="lg:text-[34px] text-2xl font-extrabold text-black  uppercase">Discover more nfts</h2>
-                    <div className="flex justify-between my-8">
-                        <div className="flex flex-wrap gap-2 items-center">
-                            <PrimaryButton>All Categories</PrimaryButton>
-                            <button className="bg-[#DCDCDC] px-5 font-semibold py-2 rounded-full">Art</button>
-                            <button className="bg-[#DCDCDC] px-5 font-semibold py-2 rounded-full">Celebrities</button>
-                            <button className="bg-[#DCDCDC] px-5 font-semibold py-2 rounded-full">Gaming</button>
-                            <button className="bg-[#DCDCDC] px-5 font-semibold py-2 rounded-full">Sport</button>
-                            <button className="bg-[#DCDCDC] px-5 font-semibold py-2 rounded-full">Music</button>
-                            <button className="bg-[#DCDCDC] px-5 font-semibold py-2 rounded-full">Crypto</button>
+        <Tabs>
+            <div className="bg-[#F7F8FA] py-10">
+                <div className="lg:w-[1140px] lg:mx-auto ">
+                    <TabList>
+                        <div className="mb-5 lg:mx-0 mx-5">
+                            <h2 className="lg:text-[34px] text-2xl font-extrabold text-black  uppercase">Discover more nfts</h2>
+                            <div className="flex justify-between my-8">
+                                <div className="flex flex-wrap gap-2 items-center">
+                                    <Tab><PrimaryButton>All Categories</PrimaryButton></Tab>
+                                    <Tab><button className="bg-[#DCDCDC] px-5 font-semibold py-2 rounded-full">Art</button></Tab>
+                                    <button className="bg-[#DCDCDC] px-5 font-semibold py-2 rounded-full">Celebrities</button>
+                                    <button className="bg-[#DCDCDC] px-5 font-semibold py-2 rounded-full">Gaming</button>
+                                    <button className="bg-[#DCDCDC] px-5 font-semibold py-2 rounded-full">Sport</button>
+                                    <button className="bg-[#DCDCDC] px-5 font-semibold py-2 rounded-full">Music</button>
+                                    <button className="bg-[#DCDCDC] px-5 font-semibold py-2 rounded-full">Crypto</button>
+                                </div>
+                                <button className="bg-[#DCDCDC] px-5 lg:h-full h-[50px] font-semibold py-2 rounded-full"><span className="flex justify-between items-center"><FaSort></FaSort>  <span>Filter</span></span></button>
+                            </div>
                         </div>
-                        <button className="bg-[#DCDCDC] px-5 lg:h-full h-[50px] font-semibold py-2 rounded-full"><span className="flex justify-between items-center"><FaSort></FaSort>  <span>Filter</span></span></button>
-                    </div>
-                </div>
-                <div className=" grid lg:grid-cols-4 gap-5">
+                    </TabList>
+                    <TabPanel>
+                        <div className=" grid lg:grid-cols-4 gap-5">
 
-                    {
-                        data.map((item, index) => <DiscoverCard key={index} cardData={item}></DiscoverCard>)
-                    }
+                            {
+                                data.map((item, index) => <DiscoverCard key={index} cardData={item}></DiscoverCard>)
+                            }
+                        </div>
+                    </TabPanel>
+                    <TabPanel>
+                        <div className=" grid lg:grid-cols-4 gap-5">
+
+                            {
+                                data1.map((item, index) => <DiscoverCard key={index} cardData={item}></DiscoverCard>)
+                            }
+                        </div>
+                    </TabPanel>
                 </div>
             </div>
-        </div>
+        </Tabs>
     );
 };
 
