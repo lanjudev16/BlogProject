@@ -7,7 +7,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { getShoppingCart } from "../../utilities/fakedb";
 const Header = () => {
   //get total book mark from local storage
-  const {bookMarkUser}=useContext(AuthContext)
+  const {bookMarkUser,bidStore}=useContext(AuthContext)
   const { user, loading, logOut } = useContext(AuthContext)
   const navigate = useNavigate()
   const handleSignOut = () => {
@@ -70,8 +70,9 @@ const Header = () => {
           </div>
           <div className=" hidden lg:flex">
             <ul className="menu menu-horizontal px-1 items-center gap-3">
-              <li>
+              <li className="relative">
                 <Link to="/myCart"><FaShoppingBag></FaShoppingBag></Link>
+                <span className="absolute top-[-6px] left-[-6px] text-white text-base max-w-[8px] max-h-[8px] flex items-center justify-center font-bold bg-[#fdbf01]  rounded-full">{Object.keys(bidStore).length}</span>
               </li>
               <li className="relative">
                 <Link to="/bookMark"><FaRegBookmark></FaRegBookmark></Link>

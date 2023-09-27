@@ -6,6 +6,8 @@ const AuthProvider = ({children}) => {
     const [bookMarkUser,setBookMarkUser]=useState([])   
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
+    const [bidStore,setBidStore]=useState([])
+    const [blogPostContext,setBlogPostContext]=useState([]) 
     const auth = getAuth(app);
     //create user
     const createUser=(email,password)=>{
@@ -32,7 +34,11 @@ const AuthProvider = ({children}) => {
         user,
         logIn,
         logOut,
-        updateUserProfile
+        updateUserProfile,
+        bidStore,
+        setBidStore,
+        blogPostContext,
+        setBlogPostContext
     }
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, currentUser => {

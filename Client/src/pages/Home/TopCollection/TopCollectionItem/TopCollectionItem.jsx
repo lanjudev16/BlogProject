@@ -1,7 +1,22 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import toast, { Toaster } from 'react-hot-toast';
+import { addToDbBid, getBidCart } from '../../../../utilities/fakedb';
+import { AuthContext } from '../../../provider/AuthProvider';
 
 const TopCollectionItem = ({item}) => {
-    const {image,person,ethereum2,price,number,name} = item;    
+    const {setBidStore}=useContext(AuthContext)
+    const {image,person,ethereum2,price,number,name,id} = item; 
+    
+    let localBIt;
+    const handlePlaceBid=(id)=>{
+       
+        addToDbBid(id)
+        toast.success('Bid Placed Successfully');
+    }   
+    useEffect(()=>{
+        localBIt=getBidCart()
+        setBidStore(localBIt)
+    },[handlePlaceBid])
     return (
         <div className='flex gap-5 items-center mb-5'>
             <img className='h-[147px] w-[147px]' src={image} alt="" />
@@ -15,7 +30,8 @@ const TopCollectionItem = ({item}) => {
                     </button>
                     <h2 className='text-[14px]'>{number}</h2>
                 </div>
-                <button className='hover:border-[#3D00B7] transition-all ease-in-out  border-transparent border-[2px] mt-2 px-3 py-2 rounded-md text-[14px] text-white hover:bg-[#3D00B7] bg-[#7040d1] '>Place a bid</button>
+                <button onClick={()=>handlePlaceBid(item.Id)} className='hover:border-[#3D00B7] transition-all ease-in-out  border-transparent border-[2px] mt-2 px-3 py-2 rounded-md text-[14px] text-white hover:bg-[#3D00B7] bg-[#7040d1] '>Place a bid</button>
+                <Toaster></Toaster>
             </div>
         </div>
     );

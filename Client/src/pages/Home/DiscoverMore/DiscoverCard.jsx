@@ -5,6 +5,12 @@ const DiscoverCard = ({ cardData }) => {
     return (
         <div className="bg-white shadow-md rounded-md p-3 lg:mx-0 mx-5"
 
+            data-aos="fade-up"
+            data-aos-offset="200"
+            data-aos-delay="50"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in"
+
         >
             <div className='relative'>
                 <img className="w-full object-cover" src={image} alt="" />

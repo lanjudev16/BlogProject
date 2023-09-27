@@ -1,19 +1,10 @@
-import React, { useEffect, useState } from "react";
-import person from "../../../../public/Blog/person.png";
+import React, { useContext, useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import {
-  FaBookmark,
-  FaEye,
-  FaRegBookmark,
-  FaShopware,
-  FaStar,
-  FaStarHalf,
-} from "react-icons/fa";
-import Rating from "react-rating";
 import SignleBookMark from "./SignleBookMark";
+import { AuthContext } from "../../provider/AuthProvider";
 const Blog = () => {
-  
+  const {setBlogPostContext}=useContext(AuthContext)  
   AOS.init();
   const [blogPost, setBlogPost] = useState([]);
   useEffect(() => {
@@ -21,7 +12,7 @@ const Blog = () => {
       .then((res) => res.json())
       .then((data) => {
         setBlogPost(data);
-        
+        setBlogPostContext(data)
       });
   }, []);
 
