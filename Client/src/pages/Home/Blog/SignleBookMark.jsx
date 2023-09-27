@@ -1,21 +1,18 @@
 import React, { useContext, useEffect, useState } from 'react';
 import person from "../../../../public/Blog/person.png";
-import AOS from "aos";
 import "aos/dist/aos.css";
 import {
     FaBookmark,
-    FaEye,
     FaRegBookmark,
     FaShopware,
     FaStar,
     FaStarHalf,
 } from "react-icons/fa";
 import Rating from "react-rating";
-import { useDispatch, useSelector } from 'react-redux';
-import { isBookMark } from '../../../features/BookMark/BookMarkSlice';
 import Aos from 'aos';
 import { addToDb, getShoppingCart, removeFromDb } from '../../../utilities/fakedb';
 import { AuthContext } from '../../provider/AuthProvider';
+import toast, { Toaster } from 'react-hot-toast';
 const SignleBookMark = ({ singleBlogPost }) => {
 
     const {setBookMarkUser}=useContext(AuthContext)
@@ -26,8 +23,10 @@ const SignleBookMark = ({ singleBlogPost }) => {
 
         if (cart.includes(singleBlogPost._id)) {
             removeFromDb(singleBlogPost._id)
+            toast.error("Remove from BookMark")
         } else {
             addToDb(singleBlogPost._id)
+            toast.success("Add to BookMark")
         }
     }
     
@@ -41,13 +40,6 @@ const SignleBookMark = ({ singleBlogPost }) => {
     return (
         <div
             className="flex flex-col card shadow mx-5 lg:mx-0"
-
-
-            data-aos="zoom-out"
-            data-aos-offset="200"
-            data-aos-delay="50"
-            data-aos-duration="1000"
-            data-aos-easing="ease-in"
         >
             <div className="bg-[#F3F3F3] px-5 py-3 flex justify-between items-center">
                 <div className="flex gap-2">
@@ -65,6 +57,7 @@ const SignleBookMark = ({ singleBlogPost }) => {
                         {
                             cart.includes(singleBlogPost._id) ? <FaBookmark></FaBookmark> : <FaRegBookmark></FaRegBookmark>
                         }
+                        <Toaster/>
                     </button>
                     <span>
                         <FaShopware></FaShopware>

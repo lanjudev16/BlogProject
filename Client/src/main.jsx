@@ -2,7 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import "./index.css";
-
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Main from "./Layouts/Main";
 import Home from "./pages/Home/Home/Home";
@@ -62,9 +61,9 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Provider store={store}>
-      <AuthProvider>
-        <RouterProvider router={router} />
-      </AuthProvider>
+        <AuthProvider>
+          <RouterProvider router={router} />
+        </AuthProvider>
     </Provider>
   </React.StrictMode>
 );
