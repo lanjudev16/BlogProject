@@ -11,8 +11,38 @@ import person1 from '../../../../public/TopCollection/Person/image1.png'
 import ethereum from '../../../../public/TopCollection/Person/ethereum.png'
 import ethereum2 from '../../../../public/TopCollection/Person/ethereum2.png'
 import Aos from 'aos'
+import TopCollectionItem from './TopCollectionItem/TopCollectionItem'
 const TopCollection = () => {
     Aos.init();
+    const toCollectionDat=[
+        {
+            Id:1,
+            image:image2,
+            name:'The Futr Abstr',
+            person:person1, 
+            ethereum:ethereum2,
+            price:0.25,
+            number:'1 of 08',
+        },
+        {
+            Id:2,
+            image:image3,
+            name:'The Futr Abstr',
+            person:person1, 
+            ethereum:ethereum2,
+            price:0.25,
+            number:'1 of 08',
+        },
+        {
+            Id:3,
+            image:image4,
+            name:'The Futr Abstr',
+            person:person1, 
+            ethereum:ethereum2,
+            price:0.25,
+            number:'1 of 08',
+        },
+    ]
     return (
         <div className='mb-10'>
             <div className='lg:w-[1140px] lg:mx-auto mx-5 grid lg:grid-cols-3 gap-5'
@@ -42,52 +72,10 @@ const TopCollection = () => {
                         </div>
                     </div>
                 </div>
-                <div>
-                    <div className='flex gap-5 items-center'>
-                        <img className='h-[147px] w-[147px]' src={image2} alt="" />
-                        <div>
-                            <h1 className='text-xl font-bold'>The Futr Abstr</h1>
-                            <div className='flex gap-2 items-center'>
-                                <img className='h-[34px] w-[34px]' src={person1} alt="" />
-                                <button className='flex justify-between items-center border-[#62c292] border-[2px] px-1 text-[#00AC4F] text-xs py-1 rounded-md'>
-                                    <img src={ethereum2} alt="" />
-                                    <h2>0.25 ETH</h2>
-                                </button>
-                                <h2 className='text-[14px]'>1 of 08</h2>
-                            </div>
-                            <button className='border-[#3D00B7] border-[2px] mt-2 px-3 py-2 rounded-md text-[14px] text-white bg-[#3D00B7]'>Place a bid</button>
-                        </div>
-                    </div>
-                    <div className='flex gap-5 items-center my-3'>
-                        <img className='h-[147px] w-[147px]' src={image3} alt="" />
-                        <div>
-                            <h1 className='text-xl font-bold'>The Futr Abstr</h1>
-                            <div className='flex gap-2 items-center'>
-                                <img className='h-[34px] w-[34px]' src={person1} alt="" />
-                                <button className='flex justify-between items-center border-[#62c292] border-[2px] px-1 text-[#00AC4F] text-xs py-1 rounded-md'>
-                                    <img src={ethereum2} alt="" />
-                                    <h2>0.25 ETH</h2>
-                                </button>
-                                <h2 className='text-[14px]'>1 of 08</h2>
-                            </div>
-                            <button className='border-[#3D00B7] border-[2px] mt-2 px-3 py-2 rounded-md text-[14px] text-[#3D00B7] '>Place a bid</button>
-                        </div>
-                    </div>
-                    <div className='flex gap-5 items-center'>
-                        <img className='h-[147px] w-[147px]' src={image4} alt="" />
-                        <div>
-                            <h1 className='text-xl font-bold'>The Futr Abstr</h1>
-                            <div className='flex gap-2 items-center'>
-                                <img className='h-[34px] w-[34px]' src={person1} alt="" />
-                                <button className='flex justify-between items-center border-[#62c292] border-[2px] px-1 text-[#00AC4F] text-xs py-1 rounded-md'>
-                                    <img src={ethereum2} alt="" />
-                                    <h2>0.25 ETH</h2>
-                                </button>
-                                <h2 className='text-[14px]'>1 of 08</h2>
-                            </div>
-                            <button className='border-[#3D00B7] border-[2px] mt-2 px-3 py-2 rounded-md text-[14px] text-[#3D00B7] '>Place a bid</button>
-                        </div>
-                    </div>
+                <div className='flex-col'>
+                    {
+                        toCollectionDat.map((item,index)=><TopCollectionItem item={item} key={index}></TopCollectionItem>)
+                    }
                 </div>
                 <div className=''>
                     <div className='border-l-[1px] pl-5 border-[#ddd]'>
