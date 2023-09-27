@@ -21,7 +21,7 @@ const Blog = () => {
       .then((res) => res.json())
       .then((data) => {
         setBlogPost(data);
-        console.log(data);
+        
       });
   }, []);
 
@@ -30,7 +30,7 @@ const Blog = () => {
       <h2 className="text-3xl font-extrabold text-black uppercase mb-10 ">Recent Blog</h2>
       <div className="grid lg:grid-cols-2 items-center gap-5">
         {blogPost?.map((singleBlogPost, index) => (
-          <SignleBookMark singleBlogPost={singleBlogPost}></SignleBookMark>
+          <SignleBookMark key={index} singleBlogPost={singleBlogPost}></SignleBookMark>
         ))}
       </div>
     </div>

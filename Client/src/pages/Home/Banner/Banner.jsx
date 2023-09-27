@@ -41,7 +41,14 @@ const Banner = () => {
                     </div>
                 </div>
             </div>
-            <div style={containerStyle} className='relative h-[40vh] lg:mx-0 lg:h-[80vh] '>
+            <div style={containerStyle} className='relative h-[40vh] lg:mx-0 lg:h-[80vh] '
+            
+            data-aos="fade-right"
+            data-aos-offset="200"
+            data-aos-delay="50"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in"
+            >
                 <div className='ml-[85px] mt-10'>
                     <h2 className=' text-white font-bold text-[28px]'>Abstr Gradient NFT</h2>
                     <div className='flex gap-5 items-center mt-3'>

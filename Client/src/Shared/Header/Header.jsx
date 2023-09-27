@@ -1,23 +1,21 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import logo from '../../../public/Header/NFters.png'
 import { FaBeer, FaBookmark, FaRegBookmark, FaSearch, FaShoppingBag, FaShoppingCart } from 'react-icons/fa';
 import { AuthContext } from "../../pages/provider/AuthProvider";
 import person from '../../../public/Blog/person.png'
 import { Link, useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { getShoppingCart } from "../../utilities/fakedb";
 const Header = () => {
+  //get total book mark from local storage
+  const {bookMarkUser}=useContext(AuthContext)
   const { user, loading, logOut } = useContext(AuthContext)
-  const book = useSelector((state) => state.bookMark.value)
-  console.log(book)
   const navigate = useNavigate()
   const handleSignOut = () => {
     logOut().then(result => {
       navigate("/signin")
     }).catch(error => {
-      console.log(error)
     })
   }
-  console.log(user)
   if (!loading) {
     return (
       <div className="bg-base shadow py-3">
@@ -77,7 +75,7 @@ const Header = () => {
               </li>
               <li className="relative">
                 <Link to="/bookMark"><FaRegBookmark></FaRegBookmark></Link>
-                <span className="absolute top-[-6px] left-[-6px] text-white text-base max-w-[8px] max-h-[8px] flex items-center justify-center font-bold bg-[#fdbf01]  rounded-full">{book}</span>
+                <span className="absolute top-[-6px] left-[-6px] text-white text-base max-w-[8px] max-h-[8px] flex items-center justify-center font-bold bg-[#fdbf01]  rounded-full">{Object.keys(bookMarkUser).length}</span>
               </li>
               
               <li>

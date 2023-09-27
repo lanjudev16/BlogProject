@@ -10,10 +10,19 @@ import image9 from '../../../../public/TopCollection/image9.png'
 import person1 from '../../../../public/TopCollection/Person/image1.png'
 import ethereum from '../../../../public/TopCollection/Person/ethereum.png'
 import ethereum2 from '../../../../public/TopCollection/Person/ethereum2.png'
+import Aos from 'aos'
 const TopCollection = () => {
+    Aos.init();
     return (
         <div className='mb-10'>
-            <div className='lg:w-[1140px] lg:mx-auto mx-5 grid lg:grid-cols-3 gap-5'>
+            <div className='lg:w-[1140px] lg:mx-auto mx-5 grid lg:grid-cols-3 gap-5'
+            
+            data-aos="zoom-out"
+            data-aos-offset="200"
+            data-aos-delay="50"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in"
+            >
                 <div>
                     <img src={image1} alt="" />
                     <div className='flex justify-between'>

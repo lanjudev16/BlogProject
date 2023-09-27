@@ -3,6 +3,7 @@ export const AuthContext=createContext(null)
 import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut, updateProfile } from "firebase/auth";
 import app from '../../firebase/firebase.config';
 const AuthProvider = ({children}) => {
+    const [bookMarkUser,setBookMarkUser]=useState([])   
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
     const auth = getAuth(app);
@@ -25,6 +26,8 @@ const AuthProvider = ({children}) => {
         });
     }
     const authInfo={
+        bookMarkUser,
+        setBookMarkUser,
         createUser,
         user,
         logIn,

@@ -1,3 +1,4 @@
+import Aos from 'aos'
 import image1 from '../../../../public/CreateAndSell/image1.png'
 import image2 from '../../../../public/CreateAndSell/image2.png'
 import image3 from '../../../../public/CreateAndSell/image3.png'
@@ -6,8 +7,16 @@ import person2 from '../../../../public/CreateAndSell/person2.png'
 import person3 from '../../../../public/CreateAndSell/person3.png'
 import PrimaryButton from '../../../Shared/Button/PrimaryButton'
 const CreateAndSell = () => {
+    Aos.init();
     return (
-        <div className="lg:w-[1140px] lg:mx-auto mx-5 grid lg:grid-cols-2 gap-10 my-10 items-center">
+        <div className="lg:w-[1140px] lg:mx-auto mx-5 grid lg:grid-cols-2 gap-10 my-10 items-center"
+        
+        data-aos="fade-right"
+        data-aos-offset="200"
+        data-aos-delay="50"
+        data-aos-duration="1000"
+        data-aos-easing="ease-in"
+        >
             <div className="flex items-center gap-10">
                 <div className='flex-col'>
                     <div className='relative'>

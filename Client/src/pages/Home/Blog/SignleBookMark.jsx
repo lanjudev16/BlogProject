@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import person from "../../../../public/Blog/person.png";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -13,16 +13,41 @@ import {
 import Rating from "react-rating";
 import { useDispatch, useSelector } from 'react-redux';
 import { isBookMark } from '../../../features/BookMark/BookMarkSlice';
+import Aos from 'aos';
+import { addToDb, getShoppingCart, removeFromDb } from '../../../utilities/fakedb';
+import { AuthContext } from '../../provider/AuthProvider';
 const SignleBookMark = ({ singleBlogPost }) => {
-    // redux implement here
-    const book = useSelector((state) => state.bookMark.value)
-    const dispatch = useDispatch()
-    console.log(book);
 
-    const [bookMark, setBookMark] = useState(false);
+    const {setBookMarkUser}=useContext(AuthContext)
+
+    
+    const [cart,setCart]=useState([])   
+    const handleBookMark = (singleBlogPost) => {
+
+        if (cart.includes(singleBlogPost._id)) {
+            removeFromDb(singleBlogPost._id)
+        } else {
+            addToDb(singleBlogPost._id)
+        }
+    }
+    
+    useEffect(() => {
+        const storedCart = getShoppingCart();
+        setCart(Object.keys(storedCart))
+        setBookMarkUser(storedCart)
+    }, [handleBookMark])
+    Aos.init()
+
     return (
         <div
             className="flex flex-col card shadow mx-5 lg:mx-0"
+
+
+            data-aos="zoom-out"
+            data-aos-offset="200"
+            data-aos-delay="50"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in"
         >
             <div className="bg-[#F3F3F3] px-5 py-3 flex justify-between items-center">
                 <div className="flex gap-2">
@@ -34,15 +59,11 @@ const SignleBookMark = ({ singleBlogPost }) => {
                 </div>
                 <div className="flex gap-3 " >
                     <button onClick={() => {
-                        setBookMark(true)
-                        , dispatch(isBookMark())
-                    }} 
-                    disabled={bookMark}
+                        handleBookMark(singleBlogPost)
+                    }}
                     >
                         {
-                            bookMark ? <div><FaBookmark></FaBookmark></div> : <div >
-                                <FaRegBookmark></FaRegBookmark>
-                            </div>
+                            cart.includes(singleBlogPost._id) ? <FaBookmark></FaBookmark> : <FaRegBookmark></FaRegBookmark>
                         }
                     </button>
                     <span>

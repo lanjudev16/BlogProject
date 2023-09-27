@@ -1,7 +1,16 @@
+import Aos from 'aos';
 import { FaBandcamp, FaCalendar } from 'react-icons/fa';
 const BannerBottom = () => {
+    Aos.init();
     return (
-        <div className="bg-[#F7F9FB] py-16 my-10">
+        <div className="bg-[#F7F9FB] py-16 my-10"
+
+            data-aos="zoom-in"
+            data-aos-offset="200"
+            data-aos-delay="50"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in"
+        >
             <div className="grid lg:grid-cols-3  grid-cols-1  mx-5 gap-5 lg:w-[1140px] lg:mx-auto ">
                 <div>
                     <h2 className="text-2xl font-extrabold uppercase text-black">The amazing nft art of the world here</h2>

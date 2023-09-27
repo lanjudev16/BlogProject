@@ -11,9 +11,18 @@ import image10 from '../../../../public/CollectionFeatures/image10.png'
 import image11 from '../../../../public/CollectionFeatures/image11.png'
 import image12 from '../../../../public/CollectionFeatures/image12.png'
 import person1 from '../../../../public/CollectionFeatures/person1.png'
+import Aos from 'aos'
 const CollectionFeature = () => {
+    Aos.init();
     return (
-        <div className="bg-[#F7F8FA]">
+        <div className="bg-[#F7F8FA]"
+        
+        data-aos="fade-left"
+        data-aos-offset="200"
+        data-aos-delay="50"
+        data-aos-duration="1000"
+        data-aos-easing="ease-in"
+        >
             <div className="lg:w-[1140px] lg:mx-auto mx-5 py-10">
                 <h2 className="text-black font-extrabold text-2xl lg:text-3xl uppercase">Collection features nfts</h2>
                 <div className="grid lg:grid-cols-3 lg:gap-10 gap-5 mt-5">
