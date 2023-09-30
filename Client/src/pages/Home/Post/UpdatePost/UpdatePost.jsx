@@ -19,7 +19,6 @@ const UpdatePost = () => {
         setSinglePost(data);
       });
   }, []);
-  console.log(getSinglePost);
   const {
     userName,
     postDate,

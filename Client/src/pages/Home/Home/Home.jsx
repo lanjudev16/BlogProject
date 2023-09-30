@@ -8,21 +8,22 @@ import CreateAndSell from '../CreateAndSell/CreateAndSell';
 import DiscoverMore from '../DiscoverMore/DiscoverMore';
 import './Home.css'
 const Home = () => {
-    
+
     useEffect(() => {
         document.title = "Home | NFTERS";
-      }, []);
-    return (
-        <div>
-            <Banner ></Banner>
-            <BannerBottom></BannerBottom>
-            <TopCollection></TopCollection>
-            <CollectionFeature></CollectionFeature>
-            <CreateAndSell></CreateAndSell>
-            <DiscoverMore></DiscoverMore>
-            <Blog></Blog>
-        </div>
-    );
+    }, []);
+    
+        return (
+            <div>
+                <Banner ></Banner>
+                <BannerBottom></BannerBottom>
+                <TopCollection></TopCollection>
+                <CollectionFeature></CollectionFeature>
+                <CreateAndSell></CreateAndSell>
+                <DiscoverMore></DiscoverMore>
+                <Blog></Blog>
+            </div>
+        );
 };
 
 export default Home;

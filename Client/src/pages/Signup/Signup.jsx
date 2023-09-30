@@ -1,8 +1,11 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import { AuthContext } from "../provider/AuthProvider";
-import { Link, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+// import { AuthContext } from "../provider/AuthProvider";
+import { Link } from "react-router-dom";
+import { createUser } from "../../features/user/userSlice";
 const Signup = () => {
+  const dispatch=useDispatch()
   //image hosting code
   const img_hosting_token = "df6b63e6f0242336c5dec606dd1ba6b4";
   const img_hosting_url = "https://api.imgbb.com/1/upload";
@@ -43,32 +46,27 @@ const Signup = () => {
   useEffect(() => {
     document.title = "Signup | NFTERS";
   }, []);
-  const { createUser, updateUserProfile } = useContext(AuthContext);
-  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
-    reset,
     formState: { errors },
     watch,
   } = useForm();
 
   const onSubmit = (data) => {
-    // Prevent default form submission behavior
     event.preventDefault();
-
-    // Handle form submission here
     console.log(data);
-    createUser(data.email, data.password)
-      .then((result) => {
-        updateUserProfile(data.firstName, uploadedImageUrl);
-        navigate("/");
-      })
-      .catch((error) => {
-        console.log(error.message);
-      });
-    // Reset the form
-    reset(); // Assuming you have the `reset` function from React Hook Form
+    const email=data.email
+    const password=data.password
+    const name=data.firstName+""+data.lastName
+
+
+
+    dispatch(createUser({email,password,name}))
+    
+
+
+
   };
 
   const password = watch("password");

@@ -1,21 +1,7 @@
-import React, { useContext, useEffect, useState } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
+import { useGetPostQuery } from "../../../features/api/PostsApi";
 import SignleBookMark from "./SignleBookMark";
-import { AuthContext } from "../../provider/AuthProvider";
 const Blog = () => {
-  const {setBlogPostContext}=useContext(AuthContext)  
-  AOS.init();
-  const [blogPost, setBlogPost] = useState([]);
-  useEffect(() => {
-    fetch(`https://blog-project-delta-sepia.vercel.app/allPost`)
-      .then((res) => res.json())
-      .then((data) => {
-        setBlogPost(data);
-        setBlogPostContext(data)
-      });
-  }, []);
-
+  const {data:blogPost}=useGetPostQuery()
   return (
     <div className="lg:w-[1140px] mx-auto my-10">
       <h2 className="text-3xl font-extrabold text-black uppercase mb-10 ">Recent Blog</h2>

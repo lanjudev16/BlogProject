@@ -6,8 +6,6 @@ const SignIn = () => {
   useEffect(() => {
     document.title = "Sign in | NFTERS";
   }, []);
-  const {logIn}=useContext(AuthContext)
-  const navigate=useNavigate()
   const {
     register,
     handleSubmit,
@@ -19,16 +17,6 @@ const SignIn = () => {
   const onSubmit = (data) => {
     // Prevent default form submission behavior
     event.preventDefault();
-
-    // Handle form submission here
-    console.log(data);
-    logIn(data.email,data.password).then(result=>{
-      navigate('/')
-    }).catch(error=>{
-      console.log(error.message)
-    })
-    // Reset the form
-    reset(); // Assuming you have the `reset` function from React Hook Form
   };
 
   const password = watch("password");

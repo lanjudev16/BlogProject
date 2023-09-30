@@ -3,8 +3,6 @@ import banner from '../../../../public/Banner/banner.png'
 import PrimaryButton from '../../../Shared/Button/PrimaryButton';
 import person1 from '../../../../public/TopCollection/Person/image1.png'
 import ethereum2 from "../../../../public/TopCollection/Person/ethereum3.png"
-import AOS from "aos";
-import "aos/dist/aos.css";
 const containerStyle = {
     background: `url(${banner})`,
     backgroundSize: 'cover',
@@ -13,15 +11,9 @@ const containerStyle = {
     width: '100%',
 };
 const Banner = () => {
-    AOS.init();
     return (
         <div className='lg:w-[1140px] lg:mx-auto grid lg:grid-cols-2 grid-cols-1 gap-5 mt-5 lg:mt-10 items-center'>
             <div
-                data-aos="fade-left"
-                data-aos-offset="200"
-                data-aos-delay="50"
-                data-aos-duration="1000"
-                data-aos-easing="ease-in"
             >
                 <h2 className=' lg:text-[40px] text-[24px] px-5 lg:px-0 text-[#000000] font-bold uppercase'>Discover, and collect Digital Art NFTs</h2>
                 <p className='px-5 lg:px-0 text-[#565656] lg:text-xl text-base mb-7 mt-3 pr-9'>Digital marketplace for crypto collectibles and non-fungible tokens (NFTs). Buy, Sell, and discover exclusive digital assets.</p>
@@ -43,11 +35,6 @@ const Banner = () => {
             </div>
             <div style={containerStyle} className='relative h-[40vh] lg:mx-0 lg:h-[80vh] '
             
-            data-aos="fade-right"
-            data-aos-offset="200"
-            data-aos-delay="50"
-            data-aos-duration="1000"
-            data-aos-easing="ease-in"
             >
                 <div className='ml-[85px] mt-10'>
                     <h2 className=' text-white font-bold text-[28px]'>Abstr Gradient NFT</h2>

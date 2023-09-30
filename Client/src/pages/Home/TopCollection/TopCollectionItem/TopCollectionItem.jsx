@@ -1,22 +1,8 @@
-import React, { useContext, useEffect, useState } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
-import { addToDbBid, getBidCart } from '../../../../utilities/fakedb';
-import { AuthContext } from '../../../provider/AuthProvider';
 
 const TopCollectionItem = ({item}) => {
-    const {setBidStore}=useContext(AuthContext)
     const {image,person,ethereum2,price,number,name,id} = item; 
     
-    let localBIt;
-    const handlePlaceBid=(id)=>{
-       
-        addToDbBid(id)
-        toast.success('Bid Placed Successfully');
-    }   
-    useEffect(()=>{
-        localBIt=getBidCart()
-        setBidStore(localBIt)
-    },[handlePlaceBid])
     return (
         <div className='flex gap-5 items-center mb-5'>
             <img className='h-[147px] w-[147px]' src={image} alt="" />

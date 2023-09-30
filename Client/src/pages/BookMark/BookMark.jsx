@@ -1,21 +1,14 @@
-import React, { useContext, useState } from 'react';
-import { AuthContext } from '../provider/AuthProvider';
+import React from 'react';
 import SingleBookMark from './SingleBookMark';
+import { useGetPostQuery } from '../../features/api/PostsApi';
 
 const BookMark = () => {
-    const { blogPostContext, bookMarkUser } = useContext(AuthContext)
-    const matchingValues = [];
-    for (const element of blogPostContext) {
-        if (Object.keys(bookMarkUser).includes(element._id)) {
-            matchingValues.push(element);
-        }
-    }
-    console.log(matchingValues);
+    const {data:PostsData} = useGetPostQuery()
+    const bookMarkPost=PostsData?.filter(post=>post.bookMark=="yes")
     return (
         <div className='lg:w-[1140px] mx-auto'>
             {
-                matchingValues?.map((SingleBookMark, index) =>
-                 <SingleBookMark key={index} SingleBookMark={SingleBookMark}></SingleBookMark>)
+               bookMarkPost?.map((post,index)=><SingleBookMark index={index} post={post} key={index}></SingleBookMark>)  
             }
         </div>
     );

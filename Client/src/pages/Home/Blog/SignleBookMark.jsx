@@ -1,6 +1,5 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React from 'react';
 import person from "../../../../public/Blog/person.png";
-import "aos/dist/aos.css";
 import {
     FaBookmark,
     FaRegBookmark,
@@ -9,41 +8,72 @@ import {
     FaStarHalf,
 } from "react-icons/fa";
 import Rating from "react-rating";
-import Aos from 'aos';
-import { addToDb, getShoppingCart, removeFromDb } from '../../../utilities/fakedb';
-import { AuthContext } from '../../provider/AuthProvider';
 import toast, { Toaster } from 'react-hot-toast';
+import { useUpdatePostMutation } from '../../../features/api/PostsApi';
 const SignleBookMark = ({ singleBlogPost }) => {
+    const {
+        userName,
+        postDate,
+        postTitle,
+        authorEmail,
+        postCategory,
+        rating,
+        tags,
+        postBody,
+        PictureURL,
+        person,
+    } = singleBlogPost;
+    const [UpdatePost, { isLoading, data }] = useUpdatePostMutation()
 
-    const {setBookMarkUser}=useContext(AuthContext)
+    const handleBookMark = (id) => {
+        if (singleBlogPost.bookMark === "yes") {
 
-    
-    const [cart,setCart]=useState([])   
-    const handleBookMark = (singleBlogPost) => {
-
-        if (cart.includes(singleBlogPost._id)) {
-            removeFromDb(singleBlogPost._id)
-            toast.error("Remove from BookMark")
-        } else {
-            addToDb(singleBlogPost._id)
-            toast.success("Add to BookMark")
+            const updateBookMarkStatus = "no"
+            const data = {
+                userName,
+                postDate,
+                postTitle,
+                authorEmail,
+                postCategory,
+                rating,
+                tags,
+                postBody,
+                PictureURL,
+                person,
+                bookMark: updateBookMarkStatus,
+            }
+            UpdatePost({ id, data })
+            toast.error("Book Mark remove successfully")
         }
-    }
-    
-    useEffect(() => {
-        const storedCart = getShoppingCart();
-        setCart(Object.keys(storedCart))
-        setBookMarkUser(storedCart)
-    }, [handleBookMark])
-    Aos.init()
+        if (singleBlogPost.bookMark === "no") {
 
+            const updateBookMarkStatus = "yes"
+            const data = {
+                userName,
+                postDate,
+                postTitle,
+                authorEmail,
+                postCategory,
+                rating,
+                tags,
+                postBody,
+                PictureURL,
+                person,
+                bookMark: updateBookMarkStatus,
+            }
+            UpdatePost({ id, data })
+            toast.success("Book Mark added successfully")
+           
+        }
+
+    }
     return (
         <div
             className="flex flex-col card shadow mx-5 lg:mx-0"
         >
             <div className="bg-[#F3F3F3] px-5 py-3 flex justify-between items-center">
                 <div className="flex gap-2">
-                    <img src={person} alt="" />
+                    <img className='w-[25px] h-[25px] rounded-full' src={person} alt="" />
                     <div className="flex flex-col">
                         <span>{singleBlogPost?.userName}</span>
                         <span>{singleBlogPost?.postDate}</span>
@@ -51,13 +81,14 @@ const SignleBookMark = ({ singleBlogPost }) => {
                 </div>
                 <div className="flex gap-3 " >
                     <button onClick={() => {
-                        handleBookMark(singleBlogPost)
+                        handleBookMark(singleBlogPost._id)
                     }}
                     >
                         {
-                            cart.includes(singleBlogPost._id) ? <FaBookmark></FaBookmark> : <FaRegBookmark></FaRegBookmark>
+                            (singleBlogPost.bookMark === "yes") ? <FaBookmark></FaBookmark> :
+                                <FaRegBookmark></FaRegBookmark>
                         }
-                        <Toaster/>
+                        <Toaster />
                     </button>
                     <span>
                         <FaShopware></FaShopware>

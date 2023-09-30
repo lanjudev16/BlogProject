@@ -81,7 +81,8 @@ async function run() {
           tags:body.tags,
           postBody:body.postBody,
           PictureURL:body.PictureURL,
-          person:body.person
+          person:body.person,
+          bookMark:body.bookMark
         }
       }
       const result=await blogCollection.updateOne(filter,updateDoc)

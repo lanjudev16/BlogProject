@@ -2,12 +2,9 @@ import React, { createContext, useEffect, useState } from 'react';
 export const AuthContext=createContext(null)
 import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut, updateProfile } from "firebase/auth";
 import app from '../../firebase/firebase.config';
-const AuthProvider = ({children}) => {
-    const [bookMarkUser,setBookMarkUser]=useState([])   
+const AuthProvider = ({children}) => {  
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
-    const [bidStore,setBidStore]=useState([])
-    const [blogPostContext,setBlogPostContext]=useState([]) 
     const auth = getAuth(app);
     //create user
     const createUser=(email,password)=>{
@@ -28,17 +25,11 @@ const AuthProvider = ({children}) => {
         });
     }
     const authInfo={
-        bookMarkUser,
-        setBookMarkUser,
         createUser,
         user,
         logIn,
         logOut,
         updateUserProfile,
-        bidStore,
-        setBidStore,
-        blogPostContext,
-        setBlogPostContext
     }
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, currentUser => {

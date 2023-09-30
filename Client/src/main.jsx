@@ -15,6 +15,8 @@ import BookMark from "./pages/BookMark/BookMark";
 import MyCart from "./pages/MyCart/MyCart";
 import { Provider } from "react-redux";
 import { store } from "./app/store";
+import Private from "./routes/Private";
+import PrivateRoute from "./routes/Private";
 
 const router = createBrowserRouter([
   {
@@ -49,7 +51,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/signup",
-    element: <Signup></Signup>,
+    element: <PrivateRoute><Signup></Signup>,</PrivateRoute>
   },
   {
     path: "/signin",
@@ -61,9 +63,9 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Provider store={store}>
-        <AuthProvider>
+      <AuthProvider>
           <RouterProvider router={router} />
-        </AuthProvider>
+      </AuthProvider>
     </Provider>
   </React.StrictMode>
 );

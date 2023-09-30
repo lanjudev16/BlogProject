@@ -19,8 +19,8 @@ const CollectionFeature = () => {
         
         data-aos="fade-left"
         data-aos-offset="200"
-        data-aos-delay="50"
-        data-aos-duration="1000"
+        data-aos-delay="1"
+        data-aos-duration="500"
         data-aos-easing="ease-in"
         >
             <div className="lg:w-[1140px] lg:mx-auto mx-5 py-10">
