@@ -15,8 +15,6 @@ import BookMark from "./pages/BookMark/BookMark";
 import MyCart from "./pages/MyCart/MyCart";
 import { Provider } from "react-redux";
 import { store } from "./app/store";
-import Private from "./routes/Private";
-import PrivateRoute from "./routes/Private";
 import MyNftEdit from "./pages/MyCart/MyNftEdit";
 
 const router = createBrowserRouter([

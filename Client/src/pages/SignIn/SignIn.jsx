@@ -3,6 +3,8 @@ import { useForm } from "react-hook-form";
 import { AuthContext } from "../provider/AuthProvider";
 import { Link, useNavigate } from "react-router-dom";
 const SignIn = () => {
+  const {logIn}=useContext(AuthContext)
+  const navigate=useNavigate()
   useEffect(() => {
     document.title = "Sign in | NFTERS";
   }, []);
@@ -17,6 +19,12 @@ const SignIn = () => {
   const onSubmit = (data) => {
     // Prevent default form submission behavior
     event.preventDefault();
+    logIn(data.email,data.password).then(result=>{
+      navigate("/")
+    }).catch(error=>{
+      console.log(error.message);
+    })
+    
   };
 
   const password = watch("password");

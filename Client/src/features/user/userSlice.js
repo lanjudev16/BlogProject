@@ -21,6 +21,7 @@ export const createUser = createAsyncThunk("userSlice/createUser", async ({ emai
         name: data.user.displayName
     }
 })
+
 const userSlice = createSlice({
     name: "userSlice",
     initialState,

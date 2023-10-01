@@ -74,7 +74,8 @@ const AddPost = () => {
         tags,
         postBody,
         PictureURL,
-        person
+        person,
+        bookMark:'no'
       };
       console.log(postInfo);
       fetch('https://blog-project-delta-sepia.vercel.app/addPost',{

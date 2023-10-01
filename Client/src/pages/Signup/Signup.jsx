@@ -1,11 +1,14 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 // import { AuthContext } from "../provider/AuthProvider";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { createUser } from "../../features/user/userSlice";
+import { AuthContext } from "../provider/AuthProvider";
 const Signup = () => {
+  const navigate=useNavigate()
   const dispatch=useDispatch()
+  const {createUser}=useContext(AuthContext)
   //image hosting code
   const img_hosting_token = "df6b63e6f0242336c5dec606dd1ba6b4";
   const img_hosting_url = "https://api.imgbb.com/1/upload";
@@ -56,17 +59,11 @@ const Signup = () => {
   const onSubmit = (data) => {
     event.preventDefault();
     console.log(data);
-    const email=data.email
-    const password=data.password
-    const name=data.firstName+""+data.lastName
-
-
-
-    dispatch(createUser({email,password,name}))
-    
-
-
-
+    createUser(data.email,data.password).then(result=>{
+      navigate("/")
+    }).catch(error=>{
+      console.log(error.message);
+    })
   };
 
   const password = watch("password");

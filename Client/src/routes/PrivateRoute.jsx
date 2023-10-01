@@ -2,13 +2,13 @@ import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import app from "../firebase/firebase.config";
-import {  setUser, toggleLoading } from "../features/user/userSlice";
-import Main from "../Layouts/Main";
+import { setUser, toggleLoading } from "../features/user/userSlice";
+import { useNavigate } from "react-router-dom";
 
 const PrivateRoute = ({ children }) => {
     const auth = getAuth(app)
-    // const location = useLocation();
     const dispatch = useDispatch()
+    const navigate=useNavigate()
     const { email, isLoading } = useSelector((state) => state.userSlice)
     useEffect(() => {
         onAuthStateChanged(auth, (user) => {
@@ -18,13 +18,13 @@ const PrivateRoute = ({ children }) => {
                     name: user.displayName
                 }))
                 dispatch(toggleLoading(false))
-            }else{
+            } else {
                 dispatch(toggleLoading(false))
             }
         })
     }, [])
-    if (email) {
-        return <Main></Main>;
+    if(!email){
+        return navigate("/")
     }
 };
 
