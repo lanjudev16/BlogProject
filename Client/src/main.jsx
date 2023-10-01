@@ -17,6 +17,7 @@ import { Provider } from "react-redux";
 import { store } from "./app/store";
 import Private from "./routes/Private";
 import PrivateRoute from "./routes/Private";
+import MyNftEdit from "./pages/MyCart/MyNftEdit";
 
 const router = createBrowserRouter([
   {
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
       {
         path: "/myCart",
         element: <MyCart></MyCart>
+      },
+      {
+        path:"/myCart/updateNft/:id",
+        element:<MyNftEdit></MyNftEdit>
       }
     ],
   },

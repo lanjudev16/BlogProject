@@ -7,7 +7,7 @@ import { useGetPostQuery } from '../features/api/PostsApi';
 const Main = () => {
     const { isLoading } = useGetPostQuery()
     if (isLoading) {
-        return <div className='w-full h-[100vh] flex items-center justify-center'>Loading</div>
+        return <div className='w-full h-[100vh] flex items-center justify-center '>loading...</div>
     } else {
         return (
             <div>

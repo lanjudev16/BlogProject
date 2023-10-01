@@ -5,10 +5,11 @@ import { AuthContext } from "../../pages/provider/AuthProvider";
 import person from '../../../public/Blog/person.png'
 import { Link, useNavigate } from "react-router-dom";
 import { useGetPostQuery } from "../../features/api/PostsApi";
+import { useSelector } from "react-redux";
 const Header = () => {
   const {data}=useGetPostQuery()
   const bookMarkTotal=data?.filter(post=>post.bookMark=="yes").length
-
+  const {bitStore}=useSelector(state=>state.nftBitStore)
   const { user, loading, logOut } = useContext(AuthContext)
   const navigate = useNavigate()
   const handleSignOut = () => {
@@ -73,7 +74,7 @@ const Header = () => {
             <ul className="menu menu-horizontal px-1 items-center gap-3">
               <li className="relative">
                 <Link to="/myCart"><FaShoppingBag></FaShoppingBag></Link>
-                <span className="absolute top-[-6px] left-[-6px] text-white text-base max-w-[8px] max-h-[8px] flex items-center justify-center font-bold bg-[#fdbf01]  rounded-full">{bookMarkTotal}</span>
+                <span className="absolute top-[-6px] left-[-6px] text-white text-base max-w-[8px] max-h-[8px] flex items-center justify-center font-bold bg-[#fdbf01]  rounded-full">{bitStore.length}</span>
               </li>
               <li className="relative">
                 <Link to="/bookMark"><FaRegBookmark></FaRegBookmark></Link>

@@ -1,15 +1,20 @@
 import Aos from "aos";
+import { useDispatch } from "react-redux";
+import { storeNftBIt } from "../../../features/nftBit/nftBitSlice";
+import { useState } from "react";
+import toast from "react-hot-toast";
 
 const DiscoverCard = ({ cardData }) => {
-    const { image, person, name, ethereum, ethValue } = cardData
+    const [isDisable,setDisable]=useState(false)
+    const dispatch=useDispatch()
+    const { image, person, name, ethereum, ethValue ,id} = cardData
+    const handlePlaceBit=(card)=>{
+        dispatch(storeNftBIt({name,person,image,ethereum,ethValue,id}))
+        toast.success("Nft Bit store successfully")
+        setDisable(true)
+    }
     return (
         <div className="bg-white shadow-md rounded-md p-3 lg:mx-0 mx-5"
-
-            data-aos="fade-up"
-            data-aos-offset="200"
-            data-aos-delay="50"
-            data-aos-duration="1000"
-            data-aos-easing="ease-in"
 
         >
             <div className='relative'>
@@ -35,7 +40,7 @@ const DiscoverCard = ({ cardData }) => {
             <div className='flex items-center justify-between'>
                 <button className='bg-[#F5F5F5] rounded-full font-semibold text-[#5539A8] px-3
                  py-1 text-[12px]'>3h 50m 2s left</button>
-                <h2 className='font-bold text-base text-[#4F33A3]'>Place a bid</h2>
+                <button disabled={isDisable}   onClick={()=>handlePlaceBit(cardData)} className={`${isDisable?"text-[#a39c9c]":"bg-transparent"} font-bold text-base text-[#4F33A3] cursor-pointer`}>Place a bid</button>
             </div>
         </div>
     );

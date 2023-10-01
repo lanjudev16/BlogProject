@@ -15,6 +15,7 @@ import 'react-tabs/style/react-tabs.css';
 const DiscoverMore = () => {
     const data = [
         {
+            id: 1,
             image: image1,
             person: [person1, person2, person3, person4],
             name: "Aspect",
@@ -22,6 +23,7 @@ const DiscoverMore = () => {
             ethValue: 0.25,
         },
         {
+            id: 2,
             image: image2,
             person: [person1, person2, person3, person4],
             name: "Aspect",
@@ -29,6 +31,7 @@ const DiscoverMore = () => {
             ethValue: 0.25,
         },
         {
+            id: 3,
             image: image3,
             person: [person1, person2, person3, person4],
             name: "Aspect",
@@ -36,6 +39,7 @@ const DiscoverMore = () => {
             ethValue: 0.25,
         },
         {
+            id: 4,
             image: image4,
             person: [person1, person2, person3, person4],
             name: "Aspect",
@@ -43,6 +47,7 @@ const DiscoverMore = () => {
             ethValue: 0.25,
         },
         {
+            id: 5,
             image: image4,
             person: [person1, person2, person3, person4],
             name: "Aspect",
@@ -50,77 +55,8 @@ const DiscoverMore = () => {
             ethValue: 0.25,
         },
         {
+            id: 6,
             image: image3,
-            person: [person1, person2, person3, person4],
-            name: "Aspect",
-            ethereum: ethereum2,
-            ethValue: 0.25,
-        },
-        {
-            image: image2,
-            person: [person1, person2, person3, person4],
-            name: "Aspect",
-            ethereum: ethereum2,
-            ethValue: 0.25,
-        },
-        {
-            image: image1,
-            person: [person1, person2, person3, person4],
-            name: "Aspect",
-            ethereum: ethereum2,
-            ethValue: 0.25,
-        },
-        {
-            image: image2,
-            person: [person1, person2, person3, person4],
-            name: "Aspect",
-            ethereum: ethereum2,
-            ethValue: 0.25,
-        },
-        {
-            image: image1,
-            person: [person1, person2, person3, person4],
-            name: "Aspect",
-            ethereum: ethereum2,
-            ethValue: 0.25,
-        },
-        {
-            image: image4,
-            person: [person1, person2, person3, person4],
-            name: "Aspect",
-            ethereum: ethereum2,
-            ethValue: 0.25,
-        },
-        {
-            image: image3,
-            person: [person1, person2, person3, person4],
-            name: "Aspect",
-            ethereum: ethereum2,
-            ethValue: 0.25,
-        },
-        {
-            image: image3,
-            person: [person1, person2, person3, person4],
-            name: "Aspect",
-            ethereum: ethereum2,
-            ethValue: 0.25,
-        },
-        {
-            image: image2,
-            person: [person1, person2, person3, person4],
-            name: "Aspect",
-            ethereum: ethereum2,
-            ethValue: 0.25,
-        },
-        {
-            image: image4,
-            person: [person1, person2, person3, person4],
-            name: "Aspect",
-            ethereum: ethereum2,
-            ethValue: 0.25,
-        },
-        {
-            image: image1,
             person: [person1, person2, person3, person4],
             name: "Aspect",
             ethereum: ethereum2,
@@ -130,6 +66,7 @@ const DiscoverMore = () => {
 
     const data1 = [
         {
+            id: 7,
             image: image4,
             person: [person1, person2, person3, person4],
             name: "Aspect",
@@ -137,6 +74,7 @@ const DiscoverMore = () => {
             ethValue: 0.25,
         },
         {
+            id: 8,
             image: image3,
             person: [person1, person2, person3, person4],
             name: "Aspect",
@@ -144,6 +82,7 @@ const DiscoverMore = () => {
             ethValue: 0.25,
         },
         {
+            id: 9,
             image: image3,
             person: [person1, person2, person3, person4],
             name: "Aspect",
@@ -151,6 +90,7 @@ const DiscoverMore = () => {
             ethValue: 0.25,
         },
         {
+            id: 10,
             image: image2,
             person: [person1, person2, person3, person4],
             name: "Aspect",
@@ -158,6 +98,7 @@ const DiscoverMore = () => {
             ethValue: 0.25,
         },
         {
+            id: 11,
             image: image1,
             person: [person1, person2, person3, person4],
             name: "Aspect",
@@ -165,77 +106,8 @@ const DiscoverMore = () => {
             ethValue: 0.25,
         },
         {
+            id: 12,
             image: image3,
-            person: [person1, person2, person3, person4],
-            name: "Aspect",
-            ethereum: ethereum2,
-            ethValue: 0.25,
-        },
-        {
-            image: image2,
-            person: [person1, person2, person3, person4],
-            name: "Aspect",
-            ethereum: ethereum2,
-            ethValue: 0.25,
-        },
-        {
-            image: image1,
-            person: [person1, person2, person3, person4],
-            name: "Aspect",
-            ethereum: ethereum2,
-            ethValue: 0.25,
-        },
-        {
-            image: image2,
-            person: [person1, person2, person3, person4],
-            name: "Aspect",
-            ethereum: ethereum2,
-            ethValue: 0.25,
-        },
-        {
-            image: image1,
-            person: [person1, person2, person3, person4],
-            name: "Aspect",
-            ethereum: ethereum2,
-            ethValue: 0.25,
-        },
-        {
-            image: image4,
-            person: [person1, person2, person3, person4],
-            name: "Aspect",
-            ethereum: ethereum2,
-            ethValue: 0.25,
-        },
-        {
-            image: image3,
-            person: [person1, person2, person3, person4],
-            name: "Aspect",
-            ethereum: ethereum2,
-            ethValue: 0.25,
-        },
-        {
-            image: image3,
-            person: [person1, person2, person3, person4],
-            name: "Aspect",
-            ethereum: ethereum2,
-            ethValue: 0.25,
-        },
-        {
-            image: image2,
-            person: [person1, person2, person3, person4],
-            name: "Aspect",
-            ethereum: ethereum2,
-            ethValue: 0.25,
-        },
-        {
-            image: image4,
-            person: [person1, person2, person3, person4],
-            name: "Aspect",
-            ethereum: ethereum2,
-            ethValue: 0.25,
-        },
-        {
-            image: image1,
             person: [person1, person2, person3, person4],
             name: "Aspect",
             ethereum: ethereum2,
@@ -245,6 +117,7 @@ const DiscoverMore = () => {
 
     const data2 = [
         {
+            id: 13,
             image: image1,
             person: [person1, person2, person3, person4],
             name: "Aspect",
@@ -252,6 +125,7 @@ const DiscoverMore = () => {
             ethValue: 0.25,
         },
         {
+            id: 14,
             image: image2,
             person: [person1, person2, person3, person4],
             name: "Aspect",
@@ -259,6 +133,7 @@ const DiscoverMore = () => {
             ethValue: 0.25,
         },
         {
+            id: 15,
             image: image3,
             person: [person1, person2, person3, person4],
             name: "Aspect",
@@ -266,6 +141,7 @@ const DiscoverMore = () => {
             ethValue: 0.25,
         },
         {
+            id: 16,
             image: image4,
             person: [person1, person2, person3, person4],
             name: "Aspect",
@@ -273,6 +149,7 @@ const DiscoverMore = () => {
             ethValue: 0.25,
         },
         {
+            id: 17,
             image: image4,
             person: [person1, person2, person3, person4],
             name: "Aspect",
@@ -280,85 +157,18 @@ const DiscoverMore = () => {
             ethValue: 0.25,
         },
         {
+            id: 18,
             image: image3,
             person: [person1, person2, person3, person4],
             name: "Aspect",
             ethereum: ethereum2,
             ethValue: 0.25,
         },
-        {
-            image: image2,
-            person: [person1, person2, person3, person4],
-            name: "Aspect",
-            ethereum: ethereum2,
-            ethValue: 0.25,
-        },
-        {
-            image: image1,
-            person: [person1, person2, person3, person4],
-            name: "Aspect",
-            ethereum: ethereum2,
-            ethValue: 0.25,
-        },
-        {
-            image: image2,
-            person: [person1, person2, person3, person4],
-            name: "Aspect",
-            ethereum: ethereum2,
-            ethValue: 0.25,
-        },
-        {
-            image: image1,
-            person: [person1, person2, person3, person4],
-            name: "Aspect",
-            ethereum: ethereum2,
-            ethValue: 0.25,
-        },
-        {
-            image: image4,
-            person: [person1, person2, person3, person4],
-            name: "Aspect",
-            ethereum: ethereum2,
-            ethValue: 0.25,
-        },
-        {
-            image: image3,
-            person: [person1, person2, person3, person4],
-            name: "Aspect",
-            ethereum: ethereum2,
-            ethValue: 0.25,
-        },
-        {
-            image: image3,
-            person: [person1, person2, person3, person4],
-            name: "Aspect",
-            ethereum: ethereum2,
-            ethValue: 0.25,
-        },
-        {
-            image: image2,
-            person: [person1, person2, person3, person4],
-            name: "Aspect",
-            ethereum: ethereum2,
-            ethValue: 0.25,
-        },
-        {
-            image: image4,
-            person: [person1, person2, person3, person4],
-            name: "Aspect",
-            ethereum: ethereum2,
-            ethValue: 0.25,
-        },
-        {
-            image: image1,
-            person: [person1, person2, person3, person4],
-            name: "Aspect",
-            ethereum: ethereum2,
-            ethValue: 0.25,
-        },
+
     ]
     const data3 = [
         {
+            id: 19,
             image: image2,
             person: [person1, person2, person3, person4],
             name: "Aspect",
@@ -366,6 +176,7 @@ const DiscoverMore = () => {
             ethValue: 0.25,
         },
         {
+            id: 20,
             image: image1,
             person: [person1, person2, person3, person4],
             name: "Aspect",
@@ -373,6 +184,7 @@ const DiscoverMore = () => {
             ethValue: 0.25,
         },
         {
+            id: 21,
             image: image4,
             person: [person1, person2, person3, person4],
             name: "Aspect",
@@ -380,6 +192,7 @@ const DiscoverMore = () => {
             ethValue: 0.25,
         },
         {
+            id: 22,
             image: image3,
             person: [person1, person2, person3, person4],
             name: "Aspect",
@@ -387,6 +200,7 @@ const DiscoverMore = () => {
             ethValue: 0.25,
         },
         {
+            id: 23,
             image: image3,
             person: [person1, person2, person3, person4],
             name: "Aspect",
@@ -394,118 +208,17 @@ const DiscoverMore = () => {
             ethValue: 0.25,
         },
         {
+            id: 24,
             image: image2,
             person: [person1, person2, person3, person4],
             name: "Aspect",
             ethereum: ethereum2,
             ethValue: 0.25,
         },
-        {
-            image: image4,
-            person: [person1, person2, person3, person4],
-            name: "Aspect",
-            ethereum: ethereum2,
-            ethValue: 0.25,
-        },
-        {
-            image: image1,
-            person: [person1, person2, person3, person4],
-            name: "Aspect",
-            ethereum: ethereum2,
-            ethValue: 0.25,
-        },
+
     ]
-    const data4 = [
-        {
-            image: image2,
-            person: [person1, person2, person3, person4],
-            name: "Aspect",
-            ethereum: ethereum2,
-            ethValue: 0.25,
-        },
-        {
-            image: image1,
-            person: [person1, person2, person3, person4],
-            name: "Aspect",
-            ethereum: ethereum2,
-            ethValue: 0.25,
-        },
-        {
-            image: image4,
-            person: [person1, person2, person3, person4],
-            name: "Aspect",
-            ethereum: ethereum2,
-            ethValue: 0.25,
-        },
-        {
-            image: image3,
-            person: [person1, person2, person3, person4],
-            name: "Aspect",
-            ethereum: ethereum2,
-            ethValue: 0.25,
-        },
-    ]
-    const data5 = [
-        {
-            image: image3,
-            person: [person1, person2, person3, person4],
-            name: "Aspect",
-            ethereum: ethereum2,
-            ethValue: 0.25,
-        },
-        {
-            image: image2,
-            person: [person1, person2, person3, person4],
-            name: "Aspect",
-            ethereum: ethereum2,
-            ethValue: 0.25,
-        },
-        {
-            image: image4,
-            person: [person1, person2, person3, person4],
-            name: "Aspect",
-            ethereum: ethereum2,
-            ethValue: 0.25,
-        },
-        {
-            image: image1,
-            person: [person1, person2, person3, person4],
-            name: "Aspect",
-            ethereum: ethereum2,
-            ethValue: 0.25,
-        },
-    ]
-    const data6 = [
-        {
-            image: image2,
-            person: [person1, person2, person3, person4],
-            name: "Aspect",
-            ethereum: ethereum2,
-            ethValue: 0.25,
-        },
-        {
-            image: image1,
-            person: [person1, person2, person3, person4],
-            name: "Aspect",
-            ethereum: ethereum2,
-            ethValue: 0.25,
-        },
-        {
-            image: image4,
-            person: [person1, person2, person3, person4],
-            name: "Aspect",
-            ethereum: ethereum2,
-            ethValue: 0.25,
-        },
-        {
-            image: image3,
-            person: [person1, person2, person3, person4],
-            name: "Aspect",
-            ethereum: ethereum2,
-            ethValue: 0.25,
-        },
-    ]
-    
+
+
 
 
     return (
@@ -524,20 +237,13 @@ const DiscoverMore = () => {
                                     <Tab>
                                         <button className="bg-[#DCDCDC] px-5 font-semibold py-2 rounded-full">Gaming</button>
                                     </Tab>
-                                    <Tab>
-                                        <button className="bg-[#DCDCDC] px-5 font-semibold py-2 rounded-full">Sport</button>
-                                    </Tab>
-                                    <Tab>
-                                        <button className="bg-[#DCDCDC] px-5 font-semibold py-2 rounded-full">Music</button>
-                                    </Tab>
-                                    <Tab><button className="bg-[#DCDCDC] px-5 font-semibold py-2 rounded-full">Crypto</button></Tab>
                                 </div>
                                 <button className="bg-[#DCDCDC] px-5 lg:h-full h-[50px] font-semibold py-2 rounded-full"><span className="flex justify-between items-center"><FaSort></FaSort>  <span>Filter</span></span></button>
                             </div>
                         </div>
                     </TabList>
                     <TabPanel>
-                        <div className=" grid lg:grid-cols-4 gap-5">
+                        <div className=" grid lg:grid-cols-3 gap-5">
 
                             {
                                 data.map((item, index) => <DiscoverCard key={index} cardData={item}></DiscoverCard>)
@@ -545,7 +251,7 @@ const DiscoverMore = () => {
                         </div>
                     </TabPanel>
                     <TabPanel>
-                        <div className=" grid lg:grid-cols-4 gap-5">
+                        <div className=" grid lg:grid-cols-3 gap-5">
 
                             {
                                 data1.map((item, index) => <DiscoverCard key={index} cardData={item}></DiscoverCard>)
@@ -553,7 +259,7 @@ const DiscoverMore = () => {
                         </div>
                     </TabPanel>
                     <TabPanel>
-                        <div className=" grid lg:grid-cols-4 gap-5">
+                        <div className=" grid lg:grid-cols-3 gap-5">
 
                             {
                                 data2.map((item, index) => <DiscoverCard key={index} cardData={item}></DiscoverCard>)
@@ -561,34 +267,10 @@ const DiscoverMore = () => {
                         </div>
                     </TabPanel>
                     <TabPanel>
-                        <div className=" grid lg:grid-cols-4 gap-5">
+                        <div className=" grid lg:grid-cols-3 gap-5">
 
                             {
                                 data3.map((item, index) => <DiscoverCard key={index} cardData={item}></DiscoverCard>)
-                            }
-                        </div>
-                    </TabPanel>
-                    <TabPanel>
-                        <div className=" grid lg:grid-cols-4 gap-5">
-
-                            {
-                                data4.map((item, index) => <DiscoverCard key={index} cardData={item}></DiscoverCard>)
-                            }
-                        </div>
-                    </TabPanel>
-                    <TabPanel>
-                        <div className=" grid lg:grid-cols-4 gap-5">
-
-                            {
-                                data5.map((item, index) => <DiscoverCard key={index} cardData={item}></DiscoverCard>)
-                            }
-                        </div>
-                    </TabPanel>
-                    <TabPanel>
-                        <div className=" grid lg:grid-cols-4 gap-5">
-
-                            {
-                                data6.map((item, index) => <DiscoverCard key={index} cardData={item}></DiscoverCard>)
                             }
                         </div>
                     </TabPanel>
