@@ -7,7 +7,10 @@ import image6 from '../../../../public/TopCollection/image6.png'
 import image7 from '../../../../public/TopCollection/image7.png'
 import image8 from '../../../../public/TopCollection/image8.png'
 import image9 from '../../../../public/TopCollection/image9.png'
-import person1 from '../../../../public/TopCollection/Person/image1.png'
+import person1 from '../../../../public/DiscoverMore/person1.png'
+import person2 from "../../../../public/DiscoverMore/person2.png"
+import person3 from "../../../../public/DiscoverMore/person3.png"
+import person4 from "../../../../public/DiscoverMore/person4.png"
 import ethereum from '../../../../public/TopCollection/Person/ethereum.png'
 import ethereum2 from '../../../../public/TopCollection/Person/ethereum2.png'
 import Aos from 'aos'
@@ -16,30 +19,30 @@ const TopCollection = () => {
     Aos.init();
     const toCollectionDat=[
         {
-            Id:1,
+            id:31,
             image:image2,
             name:'The Futr Abstr',
-            person:person1, 
+            person: [person1, person2, person3, person4],
             ethereum:ethereum2,
-            price:0.25,
+            ethValue:0.25,
             number:'1 of 08',
         },
         {
-            Id:2,
+            id:32,
             image:image3,
             name:'The Futr Abstr',
-            person:person1, 
+            person: [person1, person2, person3, person4],
             ethereum:ethereum2,
-            price:0.25,
+            ethValue:0.25,
             number:'1 of 08',
         },
         {
-            Id:3,
+            id:33,
             image:image4,
             name:'The Futr Abstr',
-            person:person1, 
+            person: [person1, person2, person3, person4],
             ethereum:ethereum2,
-            price:0.25,
+            ethValue:0.25,
             number:'1 of 08',
         },
     ]
